@@ -1,4 +1,4 @@
-local parent = game.CoreGui:FindFirstChild("SunHub"):FindFirstChild("Menu")
+
 local parent = game.CoreGui:FindFirstChild("SunHub"):FindFirstChild("Menu")
 if not parent then
 print("sry")
