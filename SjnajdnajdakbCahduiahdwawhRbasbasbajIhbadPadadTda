@@ -1,1 +1,56 @@
 
+-------------ToutLesLocal-----------------
+local player = game.Players.LocalPlayer
+local ch = player.Character
+local Gui = game:GetService("CoreGui"):FindFirstChild("SunHub")
+local Menu = Gui:FindFirstChild("Menu")
+--Main
+local main = Menu:FindFirstChild("Main")
+local main2 = main.Main
+--M1
+local M1 = main2:FindFirstChild("M1")
+local Buttonjump = M1:FindFirstChild("Buttonjump")
+--M2
+local M2 = main2:FindFirstChild("M2")
+--M3
+local M3 = main2:FindFirstChild("M3")
+--M4
+local M4 = main2:FindFirstChild("M4")
+--M5
+local M5 = main2:FindFirstChild("M5")
+
+--Main
+-------------ToutLesLocal-----------------
+---TableSave-------------
+_G.SaTAble = {
+}
+---------------------TableSave-----------------------
+-------------------Save-----------------------------
+local filName = "SunHub_Setting.txt"
+
+local function LoadSetting()
+	local HttpService = game:GetService("HttpService")
+	if (readfile and isfile and isfile(filName)) then
+		_G.SaTAble = HttpService:JSONDecode(readfile(filName))
+	end
+end
+local function saveSetting()
+	local Json 
+	local HttpService = game:GetService("HttpService")
+	if (writefile) then
+		Json = HttpService:JSONEncode(_G.SaTAble)
+		writefile(filName ,Json)
+	else
+		print("Sorry Work Only With Synapse :(")
+	end
+end
+-----------------Save----------------------------------
+-----------------Function----------------------------------
+
+-----------------Function----------------------------------
+--
+-----------------Event----------------------------------
+Buttonjump.activordesc.MouseButton1Click:Connect(function()
+	print("Work!!!!!!!")
+	end)
+-----------------Event----------------------------------
