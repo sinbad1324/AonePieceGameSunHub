@@ -1426,6 +1426,8 @@
 			game.Workspace.Gravity = Vector3.new(0,0,0)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,10,0)
 			ch.HumanoidRootPart.CFrame = island.CFrame
+                          wait(0.5)
+      game.Workspace.Gravity = 199
 		
 		end
 		
@@ -1475,11 +1477,9 @@
 					IfIsHere("Logue Town")
 				elseif name.Text == "Dawn Island"  then
 					IfIsHere("Dawn Island")
-					wait(0.7)
 					end
 			end
-			ch.Humanoid.Health = 0
-			game.Workspace.Gravity = 199
+	
 				
 		end)
 		
