@@ -6,7 +6,6 @@
 ------------------------------------------------------------------------------------------------------------
 
 
-
 	--ScrollingFrame1--
 	local ScrollingFrame1 = Instance.new("ScrollingFrame",parent)
 	ScrollingFrame1["Visible"] = false
@@ -1419,11 +1418,7 @@
 		local ch =  game:GetService("Players").LocalPlayer.Character
 		local tw = game:GetService("TweenService")
 		-- function
-		-- active teleport
-		local hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-		local colo = false
-		local twen = false
-		
+		-- active telepor
 		local function IfIsHere(Place)
 			local island = game:GetService("Workspace").Map.Islands[Place].Model.Spawner.Crystal
 			local posi = (ch.HumanoidRootPart.Position - island.Position).magnitude
@@ -1434,60 +1429,54 @@
 		
 		end
 		
-		local function teleActiv()
-			if name.Text =="Starter Island" then  
-					IfIsHere("Starter Island")	
-			elseif name.Text =="Orange Town"  then
-				IfIsHere("Orange Town")
-			elseif name.Text =="Wilderness"  then
-				IfIsHere("Wilderness")
-			elseif name.Text =="Arlong Park"  then
-				IfIsHere("Arlong Park")
-			elseif name.Text =="Skypiea"  then
-				IfIsHere("Skypiea")
-			elseif name.Text =="Desert Island"  then
-				IfIsHere("Desert Island")
-			elseif name.Text =="Arena"  then
-				IfIsHere("Arena")
-			elseif name.Text =="Marineford"  then
-				IfIsHere("Marineford")
-			elseif name.Text =="Syrup Village"  then
-				IfIsHere("Syrup Village")
-			elseif name.Text =="Impel Down"  then
-				IfIsHere("Impel Down")
-			elseif name.Text =="Flamingo's Island"  then
-				IfIsHere("Flamingo's Island")
-			elseif name.Text =="Luffy's Island"  then
-				IfIsHere("Luffy's Island")
-			elseif name.Text =="Ice Island"  then
-				IfIsHere("Ice Island")
-			elseif name.Text =="Punk Hazard"  then
-				IfIsHere("Punk Hazard")
-			elseif name.Text =="Phoenix Nest"  then
-				IfIsHere("Phoenix Nest")
-			elseif name.Text =="Germa 66"  then
-				IfIsHere("Germa 66")
-			elseif name.Text =="Buggy island"  then
-				IfIsHere("Buggy island")
-			elseif name.Text =="Thriller Bark"  then
-				IfIsHere("Thriller Bark")
-			elseif name.Text =="New Alabasta"  then
-				IfIsHere("New Alabasta")
-			elseif name.Text =="Logue Town"  then
-				IfIsHere("Logue Town")
-			elseif name.Text =="Random Wilderness"  then
-				local island = game:GetService("Workspace").Map.Islands["Random Wilderness"].Model["Rayleigh tower"].Part
-				local twen =	tw:Create(player.HumanoidRootPart , TweenInfo.new(2) , {CFrame = island.CFrame }):Play()
-			elseif name.Text == "Dawn Island"  then
-				IfIsHere("Dawn Island")
-			end
-		end
 		
 		
 		button.MouseButton1Click:Connect(function()
 			for i = 1,5 do
-				teleActiv()
-wait(0.4)
+				if name.Text =="Starter Island" then  
+					IfIsHere("Starter Island")	
+				elseif name.Text =="Orange Town"  then
+					IfIsHere("Orange Town")
+				elseif name.Text =="Wilderness"  then
+					IfIsHere("Wilderness")
+				elseif name.Text =="Arlong Park"  then
+					IfIsHere("Arlong Park")
+				elseif name.Text =="Skypiea"  then
+					IfIsHere("Skypiea")
+				elseif name.Text =="Desert Island"  then
+					IfIsHere("Desert Island")
+				elseif name.Text =="Arena"  then
+					IfIsHere("Arena")
+				elseif name.Text =="Marineford"  then
+					IfIsHere("Marineford")
+				elseif name.Text =="Syrup Village"  then
+					IfIsHere("Syrup Village")
+				elseif name.Text =="Impel Down"  then
+					IfIsHere("Impel Down")
+				elseif name.Text =="Flamingo's Island"  then
+					IfIsHere("Flamingo's Island")
+				elseif name.Text =="Luffy's Island"  then
+					IfIsHere("Luffy's Island")
+				elseif name.Text =="Ice Island"  then
+					IfIsHere("Ice Island")
+				elseif name.Text =="Punk Hazard"  then
+					IfIsHere("Punk Hazard")
+				elseif name.Text =="Phoenix Nest"  then
+					IfIsHere("Phoenix Nest")
+				elseif name.Text =="Germa 66"  then
+					IfIsHere("Germa 66")
+				elseif name.Text =="Buggy island"  then
+					IfIsHere("Buggy island")
+				elseif name.Text =="Thriller Bark"  then
+					IfIsHere("Thriller Bark")
+				elseif name.Text =="New Alabasta"  then
+					IfIsHere("New Alabasta")
+				elseif name.Text =="Logue Town"  then
+					IfIsHere("Logue Town")
+				elseif name.Text == "Dawn Island"  then
+					IfIsHere("Dawn Island")
+					wait(0.5)
+					end
 			end
 			ch.Humanoid.Health = 0
 			game.Workspace.Gravity = 199
@@ -1495,6 +1484,7 @@ wait(0.4)
 		end)
 		
 	end)
+
 
 ------------------------------------------------------------------------------------------------------------
 	end
