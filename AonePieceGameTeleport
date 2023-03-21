@@ -6,7 +6,6 @@
 ------------------------------------------------------------------------------------------------------------
 
 
-	--ScrollingFrame1--
 	local ScrollingFrame1 = Instance.new("ScrollingFrame",parent)
 	ScrollingFrame1["Visible"] = false
 	ScrollingFrame1["Active"] = true
@@ -464,292 +463,303 @@
 	TextLabel37["TextScaled"] = true
 	TextLabel37["BackgroundColor3"] = Color3.new(1, 1, 1)
 	----TextLabel37----
-	--Script38--
-	local Script38 = Instance.new("Script",Frame5)
-	Script38["Name"] = "IslandTPAonePieceGame"
-	----Script38----
+	--TextLabel38--
+	local TextLabel38 = Instance.new("TextLabel",Frame3)
+	TextLabel38["TextWrapped"] = true
+	TextLabel38["TextColor3"] = Color3.new(1, 1, 1)
+	TextLabel38["Text"] = "IslandTP"
+	TextLabel38["Font"] = Enum.Font.SourceSansItalic
+	TextLabel38["BackgroundTransparency"] = 1
+	TextLabel38["Position"] = UDim2.new(-0.00219025556, 0, -0.165375456, 0)
+	TextLabel38["Size"] = UDim2.new(0.165709659, 0, 0.161250144, 0)
+	TextLabel38["TextSize"] = 22
+	TextLabel38["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel38----
 	--TextLabel39--
 	local TextLabel39 = Instance.new("TextLabel",Frame3)
 	TextLabel39["TextWrapped"] = true
 	TextLabel39["TextColor3"] = Color3.new(1, 1, 1)
-	TextLabel39["Text"] = "IslandTP"
+	TextLabel39["Text"] = "IslandListe"
 	TextLabel39["Font"] = Enum.Font.SourceSansItalic
 	TextLabel39["BackgroundTransparency"] = 1
-	TextLabel39["Position"] = UDim2.new(-0.00219025556, 0, -0.165375456, 0)
-	TextLabel39["Size"] = UDim2.new(0.165709659, 0, 0.161250144, 0)
+	TextLabel39["Position"] = UDim2.new(0.0438065231, 0, 0.0220269635, 0)
 	TextLabel39["TextSize"] = 22
+	TextLabel39["Size"] = UDim2.new(0.172280625, 0, 0.214593768, 0)
+	TextLabel39["TextScaled"] = true
 	TextLabel39["BackgroundColor3"] = Color3.new(1, 1, 1)
 	----TextLabel39----
-	--TextLabel40--
-	local TextLabel40 = Instance.new("TextLabel",Frame3)
-	TextLabel40["TextWrapped"] = true
-	TextLabel40["TextColor3"] = Color3.new(1, 1, 1)
-	TextLabel40["Text"] = "IslandListe"
-	TextLabel40["Font"] = Enum.Font.SourceSansItalic
-	TextLabel40["BackgroundTransparency"] = 1
-	TextLabel40["Position"] = UDim2.new(0.0438065231, 0, 0.0220269635, 0)
-	TextLabel40["TextSize"] = 22
-	TextLabel40["Size"] = UDim2.new(0.172280625, 0, 0.214593768, 0)
-	TextLabel40["TextScaled"] = true
-	TextLabel40["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel40----
-	--Frame41--
-	local Frame41 = Instance.new("Frame",Frame3)
-	Frame41["Size"] = UDim2.new(0.76700002, 0, 0.172340378, 0)
-	Frame41["Position"] = UDim2.new(0.0284726173, 0, 0.616825044, 0)
-	Frame41["Name"] = "TPtOnPC"
-	Frame41["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
-	----Frame41----
-	--UICorner42--
-	local UICorner42 = Instance.new("UICorner",Frame41)
-	UICorner42["CornerRadius"] = UDim.new(0, 5)
-	----UICorner42----
-	--ImageLabel43--
-	local ImageLabel43 = Instance.new("ImageLabel",Frame41)
-	ImageLabel43["Image"] = "rbxassetid://12669165838"
-	ImageLabel43["BackgroundTransparency"] = 1
-	ImageLabel43["Position"] = UDim2.new(0.868000031, 0, 0.242974609, 0)
-	ImageLabel43["Size"] = UDim2.new(0.100000009, 0, 0.684512794, 0)
-	ImageLabel43["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----ImageLabel43----
-	--TextButton44--
-	local TextButton44 = Instance.new("TextButton",Frame41)
-	TextButton44["TextWrapped"] = true
-	TextButton44["TextColor3"] = Color3.new(1, 1, 1)
-	TextButton44["Text"] = ""
-	TextButton44["Size"] = UDim2.new(1, 0, 1, 0)
-	TextButton44["TextSize"] = 23
-	TextButton44["Font"] = Enum.Font.SourceSansItalic
-	TextButton44["BackgroundTransparency"] = 1
-	TextButton44["TextXAlignment"] = Enum.TextXAlignment.Left
-	TextButton44["Name"] = "click"
-	TextButton44["Selected"] = true
-	TextButton44["TextScaled"] = true
-	TextButton44["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextButton44----
-	--Frame45--
-	local Frame45 = Instance.new("Frame",Frame41)
-	Frame45["BackgroundTransparency"] = 1
-	Frame45["Position"] = UDim2.new(0, 0, 0.977991462, 0)
-	Frame45["Size"] = UDim2.new(1, 0, 6.69368982, 0)
-	Frame45["Name"] = "Listeisland"
-	Frame45["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
-	----Frame45----
-	--ScrollingFrame46--
-	local ScrollingFrame46 = Instance.new("ScrollingFrame",Frame45)
-	ScrollingFrame46["ScrollBarImageColor3"] = Color3.new(0, 0, 0)
-	ScrollingFrame46["Active"] = true
-	ScrollingFrame46["ScrollBarImageTransparency"] = 1
-	ScrollingFrame46["ScrollBarThickness"] = 5
-	ScrollingFrame46["BackgroundTransparency"] = 1
-	ScrollingFrame46["Position"] = UDim2.new(-1.38933942e-07, 0, -5.42756737e-08, 0)
-	ScrollingFrame46["CanvasSize"] = UDim2.new(0, 0, 1.5, 0)
-	ScrollingFrame46["Size"] = UDim2.new(1.09099996, 0, 1, 0)
-	ScrollingFrame46["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----ScrollingFrame46----
-	--Frame47--
-	local Frame47 = Instance.new("Frame",ScrollingFrame46)
-	Frame47["ClipsDescendants"] = true
-	Frame47["Size"] = UDim2.new(0.913999975, 0, 0, 0)
-	Frame47["Name"] = "Listeisland"
-	Frame47["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
-	----Frame47----
-	--TextButton48--
-	local TextButton48 = Instance.new("TextButton",Frame47)
-	TextButton48["TextWrapped"] = true
-	TextButton48["TextColor3"] = Color3.new(1, 1, 1)
-	TextButton48["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton48["Text"] = "Sanji"
-	TextButton48["Font"] = Enum.Font.SourceSansItalic
-	TextButton48["Name"] = "Island1"
-	TextButton48["TextSize"] = 14
-	TextButton48["BackgroundTransparency"] = 0.8999999761581421
-	TextButton48["Size"] = UDim2.new(0, 350, 0, 28)
-	TextButton48["TextScaled"] = true
-	TextButton48["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
-	----TextButton48----
-	--UICorner49--
-	local UICorner49 = Instance.new("UICorner",Frame47)
-	UICorner49["CornerRadius"] = UDim.new(0, 5)
-	----UICorner49----
+	--Frame40--
+	local Frame40 = Instance.new("Frame",Frame3)
+	Frame40["Size"] = UDim2.new(0.76700002, 0, 0.172340378, 0)
+	Frame40["Position"] = UDim2.new(0.0284726173, 0, 0.616825044, 0)
+	Frame40["Name"] = "TPtOnPC"
+	Frame40["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
+	----Frame40----
+	--UICorner41--
+	local UICorner41 = Instance.new("UICorner",Frame40)
+	UICorner41["CornerRadius"] = UDim.new(0, 5)
+	----UICorner41----
+	--ImageLabel42--
+	local ImageLabel42 = Instance.new("ImageLabel",Frame40)
+	ImageLabel42["Image"] = "rbxassetid://12669165838"
+	ImageLabel42["BackgroundTransparency"] = 1
+	ImageLabel42["Position"] = UDim2.new(0.868000031, 0, 0.242974609, 0)
+	ImageLabel42["Size"] = UDim2.new(0.100000009, 0, 0.684512794, 0)
+	ImageLabel42["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----ImageLabel42----
+	--TextButton43--
+	local TextButton43 = Instance.new("TextButton",Frame40)
+	TextButton43["TextWrapped"] = true
+	TextButton43["TextColor3"] = Color3.new(1, 1, 1)
+	TextButton43["Text"] = ""
+	TextButton43["Size"] = UDim2.new(1, 0, 1, 0)
+	TextButton43["TextSize"] = 23
+	TextButton43["Font"] = Enum.Font.SourceSansItalic
+	TextButton43["BackgroundTransparency"] = 1
+	TextButton43["TextXAlignment"] = Enum.TextXAlignment.Left
+	TextButton43["Name"] = "click"
+	TextButton43["Selected"] = true
+	TextButton43["TextScaled"] = true
+	TextButton43["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextButton43----
+	--Frame44--
+	local Frame44 = Instance.new("Frame",Frame40)
+	Frame44["BackgroundTransparency"] = 1
+	Frame44["Position"] = UDim2.new(0, 0, 0.977991462, 0)
+	Frame44["Size"] = UDim2.new(1, 0, 6.69368982, 0)
+	Frame44["Name"] = "Listeisland"
+	Frame44["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
+	----Frame44----
+	--ScrollingFrame45--
+	local ScrollingFrame45 = Instance.new("ScrollingFrame",Frame44)
+	ScrollingFrame45["ScrollBarImageColor3"] = Color3.new(0, 0, 0)
+	ScrollingFrame45["Active"] = true
+	ScrollingFrame45["ScrollBarImageTransparency"] = 1
+	ScrollingFrame45["ScrollBarThickness"] = 5
+	ScrollingFrame45["BackgroundTransparency"] = 1
+	ScrollingFrame45["Position"] = UDim2.new(-1.38933942e-07, 0, -5.42756737e-08, 0)
+	ScrollingFrame45["CanvasSize"] = UDim2.new(0, 0, 1.5, 0)
+	ScrollingFrame45["Size"] = UDim2.new(1.09099996, 0, 1, 0)
+	ScrollingFrame45["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----ScrollingFrame45----
+	--Frame46--
+	local Frame46 = Instance.new("Frame",ScrollingFrame45)
+	Frame46["ClipsDescendants"] = true
+	Frame46["Size"] = UDim2.new(0.913999975, 0, 0, 0)
+	Frame46["Name"] = "Listeisland"
+	Frame46["BackgroundColor3"] = Color3.new(0.117647, 0.117647, 0.14902)
+	----Frame46----
+	--TextButton47--
+	local TextButton47 = Instance.new("TextButton",Frame46)
+	TextButton47["TextWrapped"] = true
+	TextButton47["TextColor3"] = Color3.new(1, 1, 1)
+	TextButton47["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
+	TextButton47["Text"] = "Sanji"
+	TextButton47["Font"] = Enum.Font.SourceSansItalic
+	TextButton47["Name"] = "Island1"
+	TextButton47["TextSize"] = 14
+	TextButton47["BackgroundTransparency"] = 0.8999999761581421
+	TextButton47["Size"] = UDim2.new(0, 350, 0, 28)
+	TextButton47["TextScaled"] = true
+	TextButton47["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
+	----TextButton47----
+	--UICorner48--
+	local UICorner48 = Instance.new("UICorner",Frame46)
+	UICorner48["CornerRadius"] = UDim.new(0, 5)
+	----UICorner48----
+	--TextButton49--
+	local TextButton49 = Instance.new("TextButton",Frame46)
+	TextButton49["TextWrapped"] = true
+	TextButton49["TextColor3"] = Color3.new(1, 1, 1)
+	TextButton49["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
+	TextButton49["Text"] = "GenMarcher"
+	TextButton49["TextSize"] = 14
+	TextButton49["Font"] = Enum.Font.SourceSansItalic
+	TextButton49["Name"] = "Island2"
+	TextButton49["Position"] = UDim2.new(0, 0, 0.0833333433, 0)
+	TextButton49["BackgroundTransparency"] = 0.8999999761581421
+	TextButton49["Size"] = UDim2.new(0, 350, 0, 28)
+	TextButton49["TextScaled"] = true
+	TextButton49["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
+	----TextButton49----
 	--TextButton50--
-	local TextButton50 = Instance.new("TextButton",Frame47)
+	local TextButton50 = Instance.new("TextButton",Frame46)
 	TextButton50["TextWrapped"] = true
 	TextButton50["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton50["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton50["Text"] = "GenMarcher"
+	TextButton50["Text"] = "Rayleigh"
 	TextButton50["TextSize"] = 14
 	TextButton50["Font"] = Enum.Font.SourceSansItalic
-	TextButton50["Name"] = "Island2"
-	TextButton50["Position"] = UDim2.new(0, 0, 0.0833333433, 0)
+	TextButton50["Name"] = "Island3"
+	TextButton50["Position"] = UDim2.new(0, 0, 0.166666687, 0)
 	TextButton50["BackgroundTransparency"] = 0.8999999761581421
 	TextButton50["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton50["TextScaled"] = true
 	TextButton50["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton50----
 	--TextButton51--
-	local TextButton51 = Instance.new("TextButton",Frame47)
+	local TextButton51 = Instance.new("TextButton",Frame46)
 	TextButton51["TextWrapped"] = true
 	TextButton51["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton51["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton51["Text"] = "Rayleigh"
+	TextButton51["Text"] = "Merchant"
 	TextButton51["TextSize"] = 14
 	TextButton51["Font"] = Enum.Font.SourceSansItalic
-	TextButton51["Name"] = "Island3"
-	TextButton51["Position"] = UDim2.new(0, 0, 0.166666687, 0)
+	TextButton51["Name"] = "Island4"
+	TextButton51["Position"] = UDim2.new(0, 0, 0.25000003, 0)
 	TextButton51["BackgroundTransparency"] = 0.8999999761581421
 	TextButton51["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton51["TextScaled"] = true
 	TextButton51["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton51----
 	--TextButton52--
-	local TextButton52 = Instance.new("TextButton",Frame47)
+	local TextButton52 = Instance.new("TextButton",Frame46)
 	TextButton52["TextWrapped"] = true
 	TextButton52["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton52["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton52["Text"] = "Merchant"
+	TextButton52["Text"] = "Zoro"
 	TextButton52["TextSize"] = 14
 	TextButton52["Font"] = Enum.Font.SourceSansItalic
-	TextButton52["Name"] = "Island4"
-	TextButton52["Position"] = UDim2.new(0, 0, 0.25000003, 0)
+	TextButton52["Name"] = "Island5"
+	TextButton52["Position"] = UDim2.new(0, 0, 0.333333373, 0)
 	TextButton52["BackgroundTransparency"] = 0.8999999761581421
 	TextButton52["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton52["TextScaled"] = true
 	TextButton52["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton52----
 	--TextButton53--
-	local TextButton53 = Instance.new("TextButton",Frame47)
+	local TextButton53 = Instance.new("TextButton",Frame46)
 	TextButton53["TextWrapped"] = true
 	TextButton53["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton53["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton53["Text"] = "Zoro"
+	TextButton53["Text"] = "Travll Merchan"
 	TextButton53["TextSize"] = 14
 	TextButton53["Font"] = Enum.Font.SourceSansItalic
-	TextButton53["Name"] = "Island5"
-	TextButton53["Position"] = UDim2.new(0, 0, 0.333333373, 0)
+	TextButton53["Name"] = "Island6"
+	TextButton53["Position"] = UDim2.new(0, 0, 0.416666657, 0)
 	TextButton53["BackgroundTransparency"] = 0.8999999761581421
 	TextButton53["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton53["TextScaled"] = true
 	TextButton53["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton53----
 	--TextButton54--
-	local TextButton54 = Instance.new("TextButton",Frame47)
+	local TextButton54 = Instance.new("TextButton",Frame46)
 	TextButton54["TextWrapped"] = true
 	TextButton54["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton54["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton54["Text"] = "Travll Merchan"
+	TextButton54["Text"] = "Carrot"
 	TextButton54["TextSize"] = 14
 	TextButton54["Font"] = Enum.Font.SourceSansItalic
-	TextButton54["Name"] = "Island6"
-	TextButton54["Position"] = UDim2.new(0, 0, 0.416666657, 0)
+	TextButton54["Name"] = "Island7"
+	TextButton54["Position"] = UDim2.new(0, 0, 0.5, 0)
 	TextButton54["BackgroundTransparency"] = 0.8999999761581421
 	TextButton54["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton54["TextScaled"] = true
 	TextButton54["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton54----
 	--TextButton55--
-	local TextButton55 = Instance.new("TextButton",Frame47)
+	local TextButton55 = Instance.new("TextButton",Frame46)
 	TextButton55["TextWrapped"] = true
 	TextButton55["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton55["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton55["Text"] = "Carrot"
+	TextButton55["Text"] = "Busnes Man"
 	TextButton55["TextSize"] = 14
 	TextButton55["Font"] = Enum.Font.SourceSansItalic
-	TextButton55["Name"] = "Island7"
-	TextButton55["Position"] = UDim2.new(0, 0, 0.5, 0)
+	TextButton55["Name"] = "Island8"
+	TextButton55["Position"] = UDim2.new(0, 0, 0.583333313, 0)
 	TextButton55["BackgroundTransparency"] = 0.8999999761581421
 	TextButton55["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton55["TextScaled"] = true
 	TextButton55["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton55----
 	--TextButton56--
-	local TextButton56 = Instance.new("TextButton",Frame47)
+	local TextButton56 = Instance.new("TextButton",Frame46)
 	TextButton56["TextWrapped"] = true
 	TextButton56["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton56["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton56["Text"] = "Busnes Man"
+	TextButton56["Text"] = "XurySenpai"
 	TextButton56["TextSize"] = 14
 	TextButton56["Font"] = Enum.Font.SourceSansItalic
-	TextButton56["Name"] = "Island8"
-	TextButton56["Position"] = UDim2.new(0, 0, 0.583333313, 0)
+	TextButton56["Name"] = "Island9"
+	TextButton56["Position"] = UDim2.new(0, 0, 0.666666746, 0)
 	TextButton56["BackgroundTransparency"] = 0.8999999761581421
 	TextButton56["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton56["TextScaled"] = true
 	TextButton56["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton56----
 	--TextButton57--
-	local TextButton57 = Instance.new("TextButton",Frame47)
+	local TextButton57 = Instance.new("TextButton",Frame46)
 	TextButton57["TextWrapped"] = true
 	TextButton57["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton57["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton57["Text"] = "XurySenpai"
+	TextButton57["Text"] = "Fishman"
 	TextButton57["TextSize"] = 14
 	TextButton57["Font"] = Enum.Font.SourceSansItalic
-	TextButton57["Name"] = "Island9"
-	TextButton57["Position"] = UDim2.new(0, 0, 0.666666746, 0)
+	TextButton57["Name"] = "Island10"
+	TextButton57["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton57["BackgroundTransparency"] = 0.8999999761581421
 	TextButton57["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton57["TextScaled"] = true
 	TextButton57["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton57----
 	--TextButton58--
-	local TextButton58 = Instance.new("TextButton",Frame47)
+	local TextButton58 = Instance.new("TextButton",Frame46)
 	TextButton58["TextWrapped"] = true
 	TextButton58["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton58["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton58["Text"] = "Fishman"
+	TextButton58["Text"] = "XPB"
 	TextButton58["TextSize"] = 14
 	TextButton58["Font"] = Enum.Font.SourceSansItalic
-	TextButton58["Name"] = "Island10"
-	TextButton58["Position"] = UDim2.new(0, 0, 0.75, 0)
+	TextButton58["Name"] = "Island11"
+	TextButton58["Position"] = UDim2.new(0, 0, 0.833333313, 0)
 	TextButton58["BackgroundTransparency"] = 0.8999999761581421
 	TextButton58["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton58["TextScaled"] = true
 	TextButton58["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton58----
 	--TextButton59--
-	local TextButton59 = Instance.new("TextButton",Frame47)
+	local TextButton59 = Instance.new("TextButton",Frame46)
 	TextButton59["TextWrapped"] = true
 	TextButton59["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton59["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton59["Text"] = "XPB"
+	TextButton59["Text"] = "Blacksmith"
 	TextButton59["TextSize"] = 14
 	TextButton59["Font"] = Enum.Font.SourceSansItalic
-	TextButton59["Name"] = "Island11"
-	TextButton59["Position"] = UDim2.new(0, 0, 0.833333313, 0)
+	TextButton59["Name"] = "Island12"
+	TextButton59["Position"] = UDim2.new(0, 0, 0.916666687, 0)
 	TextButton59["BackgroundTransparency"] = 0.8999999761581421
 	TextButton59["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton59["TextScaled"] = true
 	TextButton59["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton59----
-	--TextButton60--
-	local TextButton60 = Instance.new("TextButton",Frame47)
-	TextButton60["TextWrapped"] = true
-	TextButton60["TextColor3"] = Color3.new(1, 1, 1)
-	TextButton60["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton60["Text"] = "Blacksmith"
-	TextButton60["TextSize"] = 14
-	TextButton60["Font"] = Enum.Font.SourceSansItalic
-	TextButton60["Name"] = "Island12"
-	TextButton60["Position"] = UDim2.new(0, 0, 0.916666687, 0)
-	TextButton60["BackgroundTransparency"] = 0.8999999761581421
-	TextButton60["Size"] = UDim2.new(0, 350, 0, 28)
-	TextButton60["TextScaled"] = true
-	TextButton60["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
-	----TextButton60----
-	--UIListLayout61--
-	local UIListLayout61 = Instance.new("UIListLayout",Frame47)
-	UIListLayout61["SortOrder"] = Enum.SortOrder.LayoutOrder
-	----UIListLayout61----
+	--UIListLayout60--
+	local UIListLayout60 = Instance.new("UIListLayout",Frame46)
+	UIListLayout60["SortOrder"] = Enum.SortOrder.LayoutOrder
+	----UIListLayout60----
+	--TextButton61--
+	local TextButton61 = Instance.new("TextButton",Frame46)
+	TextButton61["TextWrapped"] = true
+	TextButton61["TextColor3"] = Color3.new(1, 1, 1)
+	TextButton61["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
+	TextButton61["Text"] = "Ice Island"
+	TextButton61["TextSize"] = 14
+	TextButton61["Font"] = Enum.Font.SourceSansItalic
+	TextButton61["Name"] = "Island14"
+	TextButton61["Position"] = UDim2.new(0, 0, 0.75, 0)
+	TextButton61["BackgroundTransparency"] = 0.8999999761581421
+	TextButton61["Size"] = UDim2.new(0, 350, 0, 28)
+	TextButton61["TextScaled"] = true
+	TextButton61["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
+	----TextButton61----
 	--TextButton62--
-	local TextButton62 = Instance.new("TextButton",Frame47)
+	local TextButton62 = Instance.new("TextButton",Frame46)
 	TextButton62["TextWrapped"] = true
 	TextButton62["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton62["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton62["Text"] = "Ice Island"
+	TextButton62["Text"] = "Fosc"
 	TextButton62["TextSize"] = 14
 	TextButton62["Font"] = Enum.Font.SourceSansItalic
-	TextButton62["Name"] = "Island14"
+	TextButton62["Name"] = "Island13"
 	TextButton62["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton62["BackgroundTransparency"] = 0.8999999761581421
 	TextButton62["Size"] = UDim2.new(0, 350, 0, 28)
@@ -757,14 +767,14 @@
 	TextButton62["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton62----
 	--TextButton63--
-	local TextButton63 = Instance.new("TextButton",Frame47)
+	local TextButton63 = Instance.new("TextButton",Frame46)
 	TextButton63["TextWrapped"] = true
 	TextButton63["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton63["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton63["Text"] = "Fosc"
+	TextButton63["Text"] = "Old Xury"
 	TextButton63["TextSize"] = 14
 	TextButton63["Font"] = Enum.Font.SourceSansItalic
-	TextButton63["Name"] = "Island13"
+	TextButton63["Name"] = "Island15"
 	TextButton63["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton63["BackgroundTransparency"] = 0.8999999761581421
 	TextButton63["Size"] = UDim2.new(0, 350, 0, 28)
@@ -772,14 +782,14 @@
 	TextButton63["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton63----
 	--TextButton64--
-	local TextButton64 = Instance.new("TextButton",Frame47)
+	local TextButton64 = Instance.new("TextButton",Frame46)
 	TextButton64["TextWrapped"] = true
 	TextButton64["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton64["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton64["Text"] = "Old Xury"
+	TextButton64["Text"] = "Germa Doctor"
 	TextButton64["TextSize"] = 14
 	TextButton64["Font"] = Enum.Font.SourceSansItalic
-	TextButton64["Name"] = "Island15"
+	TextButton64["Name"] = "Island16"
 	TextButton64["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton64["BackgroundTransparency"] = 0.8999999761581421
 	TextButton64["Size"] = UDim2.new(0, 350, 0, 28)
@@ -787,14 +797,14 @@
 	TextButton64["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton64----
 	--TextButton65--
-	local TextButton65 = Instance.new("TextButton",Frame47)
+	local TextButton65 = Instance.new("TextButton",Frame46)
 	TextButton65["TextWrapped"] = true
 	TextButton65["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton65["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton65["Text"] = "Germa Doctor"
+	TextButton65["Text"] = "Mihawk Trainer"
 	TextButton65["TextSize"] = 14
 	TextButton65["Font"] = Enum.Font.SourceSansItalic
-	TextButton65["Name"] = "Island16"
+	TextButton65["Name"] = "Island20"
 	TextButton65["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton65["BackgroundTransparency"] = 0.8999999761581421
 	TextButton65["Size"] = UDim2.new(0, 350, 0, 28)
@@ -802,14 +812,14 @@
 	TextButton65["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton65----
 	--TextButton66--
-	local TextButton66 = Instance.new("TextButton",Frame47)
+	local TextButton66 = Instance.new("TextButton",Frame46)
 	TextButton66["TextWrapped"] = true
 	TextButton66["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton66["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton66["Text"] = "Mihawk Trainer"
+	TextButton66["Text"] = "Tilt Merchant"
 	TextButton66["TextSize"] = 14
 	TextButton66["Font"] = Enum.Font.SourceSansItalic
-	TextButton66["Name"] = "Island20"
+	TextButton66["Name"] = "Island18"
 	TextButton66["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton66["BackgroundTransparency"] = 0.8999999761581421
 	TextButton66["Size"] = UDim2.new(0, 350, 0, 28)
@@ -817,14 +827,14 @@
 	TextButton66["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton66----
 	--TextButton67--
-	local TextButton67 = Instance.new("TextButton",Frame47)
+	local TextButton67 = Instance.new("TextButton",Frame46)
 	TextButton67["TextWrapped"] = true
 	TextButton67["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton67["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton67["Text"] = "Tilt Merchant"
+	TextButton67["Text"] = "Poneglyph Merchant"
 	TextButton67["TextSize"] = 14
 	TextButton67["Font"] = Enum.Font.SourceSansItalic
-	TextButton67["Name"] = "Island18"
+	TextButton67["Name"] = "Island19"
 	TextButton67["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton67["BackgroundTransparency"] = 0.8999999761581421
 	TextButton67["Size"] = UDim2.new(0, 350, 0, 28)
@@ -832,117 +842,102 @@
 	TextButton67["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton67----
 	--TextButton68--
-	local TextButton68 = Instance.new("TextButton",Frame47)
-	TextButton68["TextWrapped"] = true
+	local TextButton68 = Instance.new("TextButton",Frame46)
+	TextButton68["RichText"] = true
 	TextButton68["TextColor3"] = Color3.new(1, 1, 1)
 	TextButton68["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton68["Text"] = "Poneglyph Merchant"
+	TextButton68["Text"] = "Mxry Xury"
+	TextButton68["TextWrapped"] = true
 	TextButton68["TextSize"] = 14
 	TextButton68["Font"] = Enum.Font.SourceSansItalic
-	TextButton68["Name"] = "Island19"
+	TextButton68["Name"] = "Island17"
 	TextButton68["Position"] = UDim2.new(0, 0, 0.75, 0)
 	TextButton68["BackgroundTransparency"] = 0.8999999761581421
 	TextButton68["Size"] = UDim2.new(0, 350, 0, 28)
 	TextButton68["TextScaled"] = true
 	TextButton68["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
 	----TextButton68----
-	--TextButton69--
-	local TextButton69 = Instance.new("TextButton",Frame47)
-	TextButton69["RichText"] = true
-	TextButton69["TextColor3"] = Color3.new(1, 1, 1)
-	TextButton69["BorderColor3"] = Color3.new(0.105882, 0.164706, 0.207843)
-	TextButton69["Text"] = "Mxry Xury"
-	TextButton69["TextWrapped"] = true
-	TextButton69["TextSize"] = 14
-	TextButton69["Font"] = Enum.Font.SourceSansItalic
-	TextButton69["Name"] = "Island17"
-	TextButton69["Position"] = UDim2.new(0, 0, 0.75, 0)
-	TextButton69["BackgroundTransparency"] = 0.8999999761581421
-	TextButton69["Size"] = UDim2.new(0, 350, 0, 28)
-	TextButton69["TextScaled"] = true
-	TextButton69["BackgroundColor3"] = Color3.new(0.160784, 0.160784, 0.203922)
-	----TextButton69----
-	--TextLabel70--
-	local TextLabel70 = Instance.new("TextLabel",Frame41)
-	TextLabel70["TextWrapped"] = true
-	TextLabel70["TextColor3"] = Color3.new(0.956863, 0.956863, 0.956863)
-	TextLabel70["Text"] = "NPc"
-	TextLabel70["Font"] = Enum.Font.SourceSans
-	TextLabel70["BackgroundTransparency"] = 1
-	TextLabel70["TextSize"] = 14
-	TextLabel70["Name"] = "IslandName"
-	TextLabel70["Size"] = UDim2.new(0.867999971, 0, 1, 0)
-	TextLabel70["TextScaled"] = true
-	TextLabel70["BackgroundColor3"] = Color3.new(1, 1, 1)
-	----TextLabel70----
-	--Script71--
-	local Script71 = Instance.new("Script",Frame41)
-	Script71["Name"] = "NPCTPaonePiecegame"
-	----Script71----
-	--Frame72--
-	local Frame72 = Instance.new("Frame",Frame3)
-	Frame72["BackgroundTransparency"] = 1
-	Frame72["Position"] = UDim2.new(0.806360126, 0, 0.784040451, 0)
-	Frame72["Size"] = UDim2.new(0, 77, 0, 35)
-	Frame72["Name"] = "ButtonNpc"
-	Frame72["BackgroundColor3"] = Color3.new(0.278431, 0.278431, 0.278431)
-	----Frame72----
-	--UICorner73--
-	local UICorner73 = Instance.new("UICorner",Frame72)
-	UICorner73["CornerRadius"] = UDim.new(1, 0)
-	----UICorner73----
-	--TextButton74--
-	local TextButton74 = Instance.new("TextButton",Frame72)
-	TextButton74["Size"] = UDim2.new(0.831168711, 0, 0.978330255, 0)
-	TextButton74["Font"] = Enum.Font.SourceSansItalic
-	TextButton74["Name"] = "activordesc"
-	TextButton74["Position"] = UDim2.new(0.077922076, 0, 0.0576655865, 0)
-	TextButton74["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton74["Text"] = ""
-	TextButton74["TextSize"] = 14
-	TextButton74["BackgroundColor3"] = Color3.new(0.258824, 0.227451, 0.407843)
-	----TextButton74----
-	--UICorner75--
-	local UICorner75 = Instance.new("UICorner",TextButton74)
-	UICorner75["CornerRadius"] = UDim.new(0.400000006, 0)
-	----UICorner75----
-	--Script76--
-	local Script76 = Instance.new("Script",Frame72)
-	Script76["Name"] = "NPCTELEActivaton"
-	----Script76----
-	--Frame77--
-	local Frame77 = Instance.new("Frame",Frame3)
-	Frame77["BackgroundTransparency"] = 1
-	Frame77["Position"] = UDim2.new(0.806360126, 0, 0.368913203, 0)
-	Frame77["Size"] = UDim2.new(0, 77, 0, 35)
-	Frame77["Name"] = "ButtonTeleport"
-	Frame77["BackgroundColor3"] = Color3.new(0.278431, 0.278431, 0.278431)
-	----Frame77----
-	--UICorner78--
-	local UICorner78 = Instance.new("UICorner",Frame77)
-	UICorner78["CornerRadius"] = UDim.new(1, 0)
-	----UICorner78----
-	--TextButton79--
-	local TextButton79 = Instance.new("TextButton",Frame77)
-	TextButton79["Size"] = UDim2.new(0.831168711, 0, 0.978330255, 0)
-	TextButton79["Font"] = Enum.Font.SourceSansItalic
-	TextButton79["Name"] = "activordesc"
-	TextButton79["Position"] = UDim2.new(0.077922076, 0, -0.11376299, 0)
-	TextButton79["TextColor3"] = Color3.new(0, 0, 0)
-	TextButton79["Text"] = ""
-	TextButton79["TextSize"] = 14
-	TextButton79["BackgroundColor3"] = Color3.new(0.258824, 0.227451, 0.407843)
-	----TextButton79----
-	--UICorner80--
-	local UICorner80 = Instance.new("UICorner",TextButton79)
-	UICorner80["CornerRadius"] = UDim.new(0.400000006, 0)
-	----UICorner80----
-	--Script81--
-	local Script81 = Instance.new("Script",Frame77)
-	Script81["Name"] = "IslandeActiovatio"
-	----Script81----
-	spawn(function() --Source for Script38
-		local script = Script38
+	--TextLabel69--
+	local TextLabel69 = Instance.new("TextLabel",Frame40)
+	TextLabel69["TextWrapped"] = true
+	TextLabel69["TextColor3"] = Color3.new(0.956863, 0.956863, 0.956863)
+	TextLabel69["Text"] = "NPc"
+	TextLabel69["Font"] = Enum.Font.SourceSans
+	TextLabel69["BackgroundTransparency"] = 1
+	TextLabel69["TextSize"] = 14
+	TextLabel69["Name"] = "IslandName"
+	TextLabel69["Size"] = UDim2.new(0.867999971, 0, 1, 0)
+	TextLabel69["TextScaled"] = true
+	TextLabel69["BackgroundColor3"] = Color3.new(1, 1, 1)
+	----TextLabel69----
+	--Script70--
+	local Script70 = Instance.new("Script",Frame40)
+	Script70["Name"] = "NPCTPaonePiecegame"
+	----Script70----
+	--Frame71--
+	local Frame71 = Instance.new("Frame",Frame3)
+	Frame71["BackgroundTransparency"] = 1
+	Frame71["Position"] = UDim2.new(0.806360126, 0, 0.784040451, 0)
+	Frame71["Size"] = UDim2.new(0, 77, 0, 35)
+	Frame71["Name"] = "ButtonNpc"
+	Frame71["BackgroundColor3"] = Color3.new(0.278431, 0.278431, 0.278431)
+	----Frame71----
+	--UICorner72--
+	local UICorner72 = Instance.new("UICorner",Frame71)
+	UICorner72["CornerRadius"] = UDim.new(1, 0)
+	----UICorner72----
+	--TextButton73--
+	local TextButton73 = Instance.new("TextButton",Frame71)
+	TextButton73["Size"] = UDim2.new(0.831168711, 0, 0.978330255, 0)
+	TextButton73["Font"] = Enum.Font.SourceSansItalic
+	TextButton73["Name"] = "activordesc"
+	TextButton73["Position"] = UDim2.new(0.077922076, 0, 0.0576655865, 0)
+	TextButton73["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton73["Text"] = ""
+	TextButton73["TextSize"] = 14
+	TextButton73["BackgroundColor3"] = Color3.new(0.258824, 0.227451, 0.407843)
+	----TextButton73----
+	--UICorner74--
+	local UICorner74 = Instance.new("UICorner",TextButton73)
+	UICorner74["CornerRadius"] = UDim.new(0.400000006, 0)
+	----UICorner74----
+	--Script75--
+	local Script75 = Instance.new("Script",Frame71)
+	Script75["Name"] = "NPCTELEActivaton"
+	----Script75----
+	--Frame76--
+	local Frame76 = Instance.new("Frame",Frame3)
+	Frame76["BackgroundTransparency"] = 1
+	Frame76["Position"] = UDim2.new(0.806360126, 0, 0.368913203, 0)
+	Frame76["Size"] = UDim2.new(0, 77, 0, 35)
+	Frame76["Name"] = "ButtonTeleport"
+	Frame76["BackgroundColor3"] = Color3.new(0.278431, 0.278431, 0.278431)
+	----Frame76----
+	--UICorner77--
+	local UICorner77 = Instance.new("UICorner",Frame76)
+	UICorner77["CornerRadius"] = UDim.new(1, 0)
+	----UICorner77----
+	--TextButton78--
+	local TextButton78 = Instance.new("TextButton",Frame76)
+	TextButton78["Size"] = UDim2.new(0.831168711, 0, 0.978330255, 0)
+	TextButton78["Font"] = Enum.Font.SourceSansItalic
+	TextButton78["Name"] = "activordesc"
+	TextButton78["Position"] = UDim2.new(0.077922076, 0, -0.11376299, 0)
+	TextButton78["TextColor3"] = Color3.new(0, 0, 0)
+	TextButton78["Text"] = ""
+	TextButton78["TextSize"] = 14
+	TextButton78["BackgroundColor3"] = Color3.new(0.258824, 0.227451, 0.407843)
+	----TextButton78----
+	--UICorner79--
+	local UICorner79 = Instance.new("UICorner",TextButton78)
+	UICorner79["CornerRadius"] = UDim.new(0.400000006, 0)
+	----UICorner79----
+	--Script80--
+	local Script80 = Instance.new("Script",Frame76)
+	Script80["Name"] = "IslandeActiovatio"
+	----Script80----
+	spawn(function() --Source for Script70
+		local script = Script70
 		local list = script.Parent.Listeisland
 		local listscr = list.ScrollingFrame
 		local click = script.Parent.click
@@ -950,15 +945,277 @@
 		local dbc = false
 		click.MouseButton1Click:Connect(function()
 			if  dbc == false then
+				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,1,0) , 0.8)
+				dbc = true
+			else
+				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) ,0.8)
+		
+				dbc = false
+				end
+		end)
+		-- quel island????
+		local quel = listscr.Listeisland
+		
+		
+		quel.Island1.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island1.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0))
+			dbc = false
+		end)
+		
+		quel.Island2.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island2.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) )
+			dbc = false
+		end)
+		
+		quel.Island3.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island3.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+		
+			dbc = false
+		end)
+		
+		quel.Island4.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island4.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+		
+			dbc = false
+		end)
+		
+		quel.Island5.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island5.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+		
+			dbc = false
+		end)
+		
+		quel.Island6.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island6.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+		
+			dbc = false
+		end)
+		
+		quel.Island7.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island7.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+		
+			dbc = false
+		end)
+		
+		quel.Island8.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island8.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island9.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island9.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island10.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island10.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island11.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island11.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island12.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island12.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		quel.Island13.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island13.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island14.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island14.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island15.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island15.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island16.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island16.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island17.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island17.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island18.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island18.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island19.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island19.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+		
+		quel.Island20.MouseButton1Click:Connect(function()
+			RealIslandNAME.Text = quel.Island20.Text
+			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
+			wait(0.3)
+			script.Parent.Parent.TPtOnPC.Visible = true
+			dbc = false
+		end)
+	end)
+	spawn(function() --Source for Script75
+		local script = Script75
+		local button = script.Parent.activordesc
+		local name = script.Parent.Parent.TPtOnPC.IslandName
+		local dbc = false
+		local art = false
+		local player = game:GetService("Players").LocalPlayer .Character
+		local tw = game:GetService("TweenService")
+		-- active teleport
+		local hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local colo = false
+		local twen = false
+		local npc2 = game:GetService("Workspace").Interactables.Sanji
+		local npc3 = game:GetService("Workspace").Interactables.GemMerchant
+		local npc4 = game:GetService("Workspace").Interactables.Rayleigh
+		local npc5 = game:GetService("Workspace").Interactables
+		local npc6 = game:GetService("Workspace").Interactables.Zoro
+		local npc7 = game:GetService("Workspace").Interactables["Traveling Merchant"]
+		local npc8 = game:GetService("Workspace").Interactables.Carrot
+		local npc9 = game:GetService("Workspace").Interactables["Business Man"]
+		local npc10 = game:GetService("Workspace").Interactables.XurySenpai
+		local npc11 = game:GetService("Workspace").Interactables.Fishman
+		local npc12 = game:GetService("Workspace").Interactables["XurySenpai's Brother"]
+		local npc13 = game:GetService("Workspace").Interactables.Blacksmith
+		local npc14 = game:GetService("Workspace").Interactables.Fosc
+		local npc15 = game:GetService("Workspace").Interactables["Old Xury"]
+		local npc16 = game:GetService("Workspace").Interactables["Ifrit Sanji"]
+		local npc17 = game:GetService("Workspace").Interactables["Germa Doctor"]
+		local npc18 = game:GetService("Workspace").Interactables["Multiverse Xury"]
+		local npc19 = game:GetService("Workspace").Interactables["Title Merchant"]
+		local npc20 = game:GetService("Workspace").Interactables["Poneglyph Merchant"]
+		local npc21 = game:GetService("Workspace").Interactables["Mihawk Trainer"]
+		
+		local function telenpc()
+			if name.Text == "Sanji" then
+				local art =		tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc2.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "GenMarcher" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc3.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Rayleigh" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc4.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Merchant" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc5.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Zoro" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc6.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Travll Merchan" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc7.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Carrot" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc8.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Busnes Man" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc9.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "XurySenpai" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc10.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Fishman" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc11.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "XPB" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc12.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Blacksmith" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc13.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Fosc" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc14.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Ice Island" then
+				local art = 	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc15.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Old Xury" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc16.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Germa Doctor" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc17.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Mxry Xury" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc18.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Tilt Merchant" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc19.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Poneglyph Merchant" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc20.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			elseif name.Text == "Mihawk Trainer" then
+				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc21.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
+			end
+		end
+		
+		button.MouseButton1Click:Connect(function()
+			spawn(function()
+				for i=1,2 do 
+					telenpc()
+					wait()
+				end
+			end)
+		end)
+	end)
+	spawn(function() --Source for Script80
+		local script = Script80
+		local list = script.Parent.Parent.IslandChose.Listeisland
+		local listscr = list.ScrollingFrame
+		local click = script.Parent.Parent.IslandChose.click
+		local RealIslandNAME = script.Parent.Parent.IslandChose.IslandName
+		local dbc = false
+		click.MouseButton1Click:Connect(function()
+			if  dbc == false then
 				script.Parent.Parent.TPtOnPC.Visible = false
 				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,1,0),0.1)	
 				wait(1)
-					dbc = true
+				dbc = true
 			else
 				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) ,0.1)
 				script.Parent.Parent.TPtOnPC.Visible = true
 				wait(1)
-					dbc = false
+				dbc = false
 			end	
 		end)
 		-- quel island????
@@ -1146,288 +1403,21 @@
 		end)
 		
 		
-	end)
-	spawn(function() --Source for Script71
-		local script = Script71
-		local list = script.Parent.Listeisland
-		local listscr = list.ScrollingFrame
-		local click = script.Parent.click
-		local RealIslandNAME = script.Parent.IslandName
-		local dbc = false
-		click.MouseButton1Click:Connect(function()
-			if  dbc == false then
-				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,1,0) , 0.8)
-				dbc = true
-			else
-				listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) ,0.8)
 		
-				dbc = false
-				end
-		end)
-		-- quel island????
-		local quel = listscr.Listeisland
-		
-		
-		quel.Island1.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island1.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0))
-			dbc = false
-		end)
-		
-		quel.Island2.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island2.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) )
-			dbc = false
-		end)
-		
-		quel.Island3.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island3.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-		
-			dbc = false
-		end)
-		
-		quel.Island4.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island4.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-		
-			dbc = false
-		end)
-		
-		quel.Island5.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island5.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-		
-			dbc = false
-		end)
-		
-		quel.Island6.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island6.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-		
-			dbc = false
-		end)
-		
-		quel.Island7.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island7.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-		
-			dbc = false
-		end)
-		
-		quel.Island8.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island8.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island9.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island9.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island10.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island10.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island11.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island11.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island12.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island12.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		quel.Island13.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island13.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island14.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island14.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island15.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island15.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island16.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island16.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island17.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island17.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island18.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island18.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island19.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island19.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-		
-		quel.Island20.MouseButton1Click:Connect(function()
-			RealIslandNAME.Text = quel.Island20.Text
-			listscr.Listeisland:TweenSize(UDim2.new(0.914,0,0,0) , 0.4)
-			wait(0.3)
-			script.Parent.Parent.TPtOnPC.Visible = true
-			dbc = false
-		end)
-	end)
-	spawn(function() --Source for Script76
-		local script = Script76
-		local button = script.Parent.activordesc
-		local name = script.Parent.Parent.TPtOnPC.IslandName
-		local dbc = false
-		local art = false
-		local player = game:GetService("Players").LocalPlayer .Character
-		local tw = game:GetService("TweenService")
-		-- active teleport
-		local hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-		local colo = false
-		local twen = false
-		local npc2 = game:GetService("Workspace").Interactables.Sanji
-		local npc3 = game:GetService("Workspace").Interactables.GemMerchant
-		local npc4 = game:GetService("Workspace").Interactables.Rayleigh
-		local npc5 = game:GetService("Workspace").Interactables
-		local npc6 = game:GetService("Workspace").Interactables.Zoro
-		local npc7 = game:GetService("Workspace").Interactables["Traveling Merchant"]
-		local npc8 = game:GetService("Workspace").Interactables.Carrot
-		local npc9 = game:GetService("Workspace").Interactables["Business Man"]
-		local npc10 = game:GetService("Workspace").Interactables.XurySenpai
-		local npc11 = game:GetService("Workspace").Interactables.Fishman
-		local npc12 = game:GetService("Workspace").Interactables["XurySenpai's Brother"]
-		local npc13 = game:GetService("Workspace").Interactables.Blacksmith
-		local npc14 = game:GetService("Workspace").Interactables.Fosc
-		local npc15 = game:GetService("Workspace").Interactables["Old Xury"]
-		local npc16 = game:GetService("Workspace").Interactables["Ifrit Sanji"]
-		local npc17 = game:GetService("Workspace").Interactables["Germa Doctor"]
-		local npc18 = game:GetService("Workspace").Interactables["Multiverse Xury"]
-		local npc19 = game:GetService("Workspace").Interactables["Title Merchant"]
-		local npc20 = game:GetService("Workspace").Interactables["Poneglyph Merchant"]
-		local npc21 = game:GetService("Workspace").Interactables["Mihawk Trainer"]
-		
-		local function telenpc()
-			if name.Text == "Sanji" then
-				local art =		tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc2.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "GenMarcher" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc3.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Rayleigh" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc4.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Merchant" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc5.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Zoro" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc6.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Travll Merchan" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc7.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Carrot" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc8.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Busnes Man" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc9.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "XurySenpai" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc10.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Fishman" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc11.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "XPB" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc12.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Blacksmith" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc13.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Fosc" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc14.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Ice Island" then
-				local art = 	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc15.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Old Xury" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc16.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Germa Doctor" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc17.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Mxry Xury" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc18.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Tilt Merchant" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc19.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Poneglyph Merchant" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc20.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			elseif name.Text == "Mihawk Trainer" then
-				local art =	tw:Create(player.HumanoidRootPart , TweenInfo.new(1) , {CFrame = npc21.HumanoidRootPart.CFrame * CFrame.new(0,1,-5) }):Play()
-			end
-		end
-		
-		button.MouseButton1Click:Connect(function()
-			spawn(function()
-				for i=1,2 do 
-					telenpc()
-					wait()
-				end
-			end)
-		end)
-	end)
-	spawn(function() --Source for Script81
-		local script = Script81
 		local button = script.Parent.activordesc
 		local name = script.Parent.Parent.IslandChose.IslandName
-		local dbc = false
-		local art = false
 		local ch =  game:GetService("Players").LocalPlayer.Character
 		local tw = game:GetService("TweenService")
 		-- function
 		-- active telepor
 		local function IfIsHere(Place)
 			local island = game:GetService("Workspace").Map.Islands[Place].Model.Spawner.Crystal
-			local posi = (ch.HumanoidRootPart.Position - island.Position).magnitude
+			local posi = (ch:FindFirstChild("HumanoidRootPart").Position - island.Position).magnitude
 			fireclickdetector(island.ClickDetector, 1)
 			game.Workspace.Gravity = Vector3.new(0,0,0)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,10,0)
-			ch.HumanoidRootPart.CFrame = island.CFrame
-                          wait(0.5)
-      game.Workspace.Gravity = 199
+			ch:FindFirstChild("HumanoidRootPart").CFrame = island.CFrame
+			print(ch:FindFirstChild("HumanoidRootPart").CFrame)
 		
 		end
 		
@@ -1477,14 +1467,14 @@
 					IfIsHere("Logue Town")
 				elseif name.Text == "Dawn Island"  then
 					IfIsHere("Dawn Island")
-					end
+				end
 			end
-	
-				
+			game.Workspace.Gravity = 199	
+			ch:FindFirstChild("HumanoidRootPart").Health = 0
+
 		end)
 		
 	end)
-
 
 ------------------------------------------------------------------------------------------------------------
 	end
