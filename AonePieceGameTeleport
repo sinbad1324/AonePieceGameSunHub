@@ -1418,7 +1418,8 @@
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,10,0)
 			ch:FindFirstChild("HumanoidRootPart").CFrame = island.CFrame
 			print(ch:FindFirstChild("HumanoidRootPart").CFrame)
-		
+			wait(0.7)
+						game.Workspace.Gravity = 199	
 		end
 		
 		
