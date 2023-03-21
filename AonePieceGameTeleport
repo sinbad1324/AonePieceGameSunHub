@@ -1475,7 +1475,7 @@
 					IfIsHere("Logue Town")
 				elseif name.Text == "Dawn Island"  then
 					IfIsHere("Dawn Island")
-					wait(0.5)
+					wait(0.7)
 					end
 			end
 			ch.Humanoid.Health = 0
