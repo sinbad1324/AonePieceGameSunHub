@@ -1,1 +1,3142 @@
+-------------ToutLesLocal-----------------
+local player = game.Players.LocalPlayer
+local ch = game:GetService("Players").LocalPlayer.Character
+local mouse = player:GetMouse()
+local Gui = game:GetService("CoreGui"):FindFirstChild("SunHub")
+local Menu = Gui:FindFirstChild("Menu")
+local uis = game:GetService("UserInputService")
+local tw = game:GetService("TweenService")
+local tle = game:GetService("TeleportService")
+local cam = workspace.CurrentCamera
+----humanoidChange-------
+local chnagespeed
+local chnageJumb 
+----humanoidChange-------
+--Main
+local main = Menu:FindFirstChild("Main")
+local main2 = main.Main
+--M1
+local M1 = main2:FindFirstChild("M1")
+--M2
+local M2 = main2:FindFirstChild("M2")
+--M3
+local M3 = main2:FindFirstChild("M3")
+--metlesdanslescript
+--M4
+local M4 = main2:FindFirstChild("M4")
+--M5
+local M5 = main2:FindFirstChild("M5")
+----M6
+local M6 = main2:FindFirstChild("M6")
+--metlesdanslescript
+--Main
+------------------RaidScroll----------
+local RaidScroll = Menu:FindFirstChild("RaidScroll")
+------------------RaidScroll----------
+------------- AutoFarmScroll-------------- 
 
+--------hmmmmmmmmmmmmmmm
+-----
+local AutoFarmScroll 
+local AutoFarmFrame 
+local A1 
+--A4
+local A4 
+--A3
+local A3
+----------------------
+local Raid 
+--R1
+local R1 
+--R2
+local R2 
+--R3
+local R3 
+--R4
+local R4 
+---hmmmmmmmmmmmmmmmmmmmm
+if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
+
+	AutoFarmScroll = Menu:FindFirstChild("AutoFarmScroll")
+	AutoFarmFrame =  AutoFarmScroll:FindFirstChild("AutoFarm")
+	--A1
+	A1 = AutoFarmFrame:FindFirstChild("A1")
+	--A4
+	A4 = AutoFarmFrame:FindFirstChild("A4")
+	--A3
+	A3 = AutoFarmFrame:FindFirstChild("A3")
+	------------- AutoFarmScroll-------------- 
+	------------- RaidScroll-------------- 
+	Raid = RaidScroll:FindFirstChild("Raid")
+	--R1
+	R1 = Raid:FindFirstChild("R1")
+	--R2
+	R2 = Raid:FindFirstChild("R2")
+	--R3
+	R3 = Raid:FindFirstChild("R3")
+	--R4
+	R4 = Raid:FindFirstChild("R4")
+
+	------------- RaidScroll-------------- 
+	------------- Tleposcrolle-------------- 
+	local Tleposcrolle = Menu:FindFirstChild("Tleposcrolle")
+	local Teleportationmain =  Tleposcrolle:FindFirstChild("Teleportationmain")
+	--TL1
+	local TL1 =  Teleportationmain:FindFirstChild("TL1")
+end
+------------- Tleposcrolle-------------- 
+--------------PLayer----------------
+local Playerscroll = Menu:FindFirstChild("player")
+local PlayerFramm =  Playerscroll:FindFirstChild("Player")
+--P1
+local P1 = PlayerFramm:FindFirstChild("P1")
+--P2
+local P2 = PlayerFramm:FindFirstChild("P2")
+--P3
+local P3 = PlayerFramm:FindFirstChild("P3")
+--------------------Player----------------------
+-------------ToutLesLocal-----------------
+------------------------VERIFYIFGAMEORDUNGEON------------------------------------
+------------------------VERIFYIFGAMEORDUNGEON------------------------------------
+------LesGetGnev----
+getgenv().Swim = false
+getgenv().autoattaque = false
+------LesGetGnev----
+---TableSave-------------
+
+_G.NorameTAble = {
+	cbcFly = false;
+	valueFly = false;
+	cbcNoclip = false;
+	Opfruse = false;
+	OpMelle = false;
+	OpSword = false;
+	cbcAutoFruitBuy = false;
+	OpenAutofarm = false; 
+	cbcINFdash = false;
+	cbcPlayerEsp = false;
+	Opplayerlook = false;
+	cbcwhoName = false;
+	cbctptpplayer = false;
+	cbcLookautorise = false;
+	Opequiptool = false;
+	OpeRaid = false;
+	Opemaze = false ;
+	OpeDungeon = false;
+	OpeAre = false;
+}
+_G.SaTAble = {
+	cbcSpeed = false;
+	cbcJumb = false;
+	valuepedd = 16;
+	valueJumb = 52;
+	cbcDefence = false;
+	SaFruitKey = {
+		FruitQ = false;
+		FruitF = false;
+		FruitE = false;
+		FruitR = false;
+		FruitT = false;
+		FruitG = false;
+	};
+	SaMelleKey = {
+		MelleQ = false;
+		MelleE = false;
+		MelleF = false;
+		MelleR = false;
+		MelleT = false;
+		MelleG = false
+	};
+	SaSwordKey = {
+		SwordE = false;
+		SwordR = false;
+		SwordT = false;
+		SwordF = false;
+		SwordQ = false;
+		SwordG = false;
+
+	};
+	AutoMob = false;
+	NPC = "BOOS/NPC";
+	cbcAutoCkick = false;
+	ladis = nil;
+	cbequipe = false;
+	cbcRaid = "Select";
+	Laquel = {
+		raId = false;
+		maze = false;
+		dungeon = false;
+		arena = false;
+	};
+	RaidDiste = 50;
+	RaidHP = 20;
+	cbcAutoRaidFarm = false;
+	cbcsavezone = false;
+	cbcAutoRestart = false;
+	sea1or2 = nil;
+	Item = nil
+}
+---------------------TableSave-----------------------
+-------------------Save-----------------------------
+makefolder("Sun Hub")
+local filName = player.Name.."SunHub_Setting.txt"
+local filePath = "Sun Hub\\" .. filName
+
+local function LoadSetting()
+	local HttpService = game:GetService("HttpService")
+	if (readfile and isfile and isfile(filePath)) then
+		_G.SaTAble = HttpService:JSONDecode(readfile(filePath))
+	end
+end
+local function saveSetting()
+	local Json 
+	local HttpService = game:GetService("HttpService")
+	if (writefile) then
+		Json = HttpService:JSONEncode(_G.SaTAble)
+		writefile(filePath ,Json)
+	else
+		print("Sorry Work Only With Synapse :(")
+	end
+end
+
+-----------------Save----------------------------------
+
+-----------------EventBar+function----------------------------------
+--SpeedBar---
+spawn(function()
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local startSizeX
+	local minSizeX = 0 
+	local maxSizeX = 240
+	local function update(input , goo)
+		local delta = input.Position.X - dragStart.X
+		local newSizeX = startSizeX + delta
+
+		-- Vérifie si la taille est dans la plage autorisée
+		if newSizeX < minSizeX then
+			newSizeX = minSizeX
+		elseif newSizeX > maxSizeX then
+			newSizeX = maxSizeX
+		end
+
+		goo.Size = UDim2.new(goo.Size.X.Scale, newSizeX, goo.Size.Y.Scale, goo.Size.Y.Offset)
+	end
+	M1:FindFirstChild("BarSpeed").InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startSizeX = M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed").Size.X.Offset
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	M1:FindFirstChild("BarSpeed").InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+		if input == dragInput and dragging then
+			update(input ,M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed"))
+		end
+	end)
+
+	M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed"):GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+		_G.SaTAble.valuepedd = M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed").AbsoluteSize.X
+		saveSetting()
+		wait()
+	end)
+end)
+-----SpeedBar----
+--JumbBar----------
+spawn(function()
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local startSizeX
+	local minSizeX = 0 
+	local maxSizeX = 240
+	local function updatejumb(input , go)
+		local delta = input.Position.X - dragStart.X
+		local newSizeX = startSizeX + delta
+		if newSizeX < minSizeX then
+			newSizeX = minSizeX
+		elseif newSizeX > maxSizeX then
+			newSizeX = maxSizeX
+		end
+
+		go.Size = UDim2.new(go.Size.X.Scale, newSizeX, go.Size.Y.Scale, go.Size.Y.Offset)
+	end
+	M1:FindFirstChild("BarJump").InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startSizeX = M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb").Size.X.Offset
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	M1:FindFirstChild("BarJump").InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+		if input == dragInput and dragging then
+			updatejumb(input ,M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb"))
+		end
+	end)
+
+	M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb"):GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+		_G.SaTAble.valueJumb = M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb").AbsoluteSize.X
+		saveSetting()
+		wait()
+	end)
+end)
+--JumbBar----------
+------FlyBar--------
+spawn(function()
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local startSizeX
+	local minSizeX = 0 
+	local maxSizeX = 240
+	local function update(input , goo)
+		local delta = input.Position.X - dragStart.X
+		local newSizeX = startSizeX + delta
+
+		-- Vérifie si la taille est dans la plage autorisée
+		if newSizeX < minSizeX then
+			newSizeX = minSizeX
+		elseif newSizeX > maxSizeX then
+			newSizeX = maxSizeX
+		end
+
+		goo.Size = UDim2.new(goo.Size.X.Scale, newSizeX, goo.Size.Y.Scale, goo.Size.Y.Offset)
+	end
+	M2:FindFirstChild("BarFly Speed").InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startSizeX = M2:FindFirstChild("BarFly Speed"):FindFirstChild("ColoreJfly").Size.X.Offset
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	M2:FindFirstChild("BarFly Speed").InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement then
+			dragInput = input
+		end
+	end)
+	game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+		if input == dragInput and dragging then
+			update(input ,M2:FindFirstChild("BarFly Speed"):FindFirstChild("ColoreJfly"))
+		end
+	end)
+
+	M2:FindFirstChild("BarFly Speed"):FindFirstChild("ColoreJfly"):GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+		_G.NorameTAble.valueFly = M2:FindFirstChild("BarFly Speed"):FindFirstChild("ColoreJfly").AbsoluteSize.X
+		saveSetting()
+		wait()
+	end)
+end)
+------------FlyBar----------
+-----------------Distencetomobfarm---------------------------
+if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
+
+	spawn(function()
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local startSizeX
+		local minSizeX = 0 
+		local maxSizeX = 240
+		local function update(input , goo)
+			local delta = input.Position.X - dragStart.X
+			local newSizeX = startSizeX + delta
+
+			-- Vérifie si la taille est dans la plage autorisée
+			if newSizeX < minSizeX then
+				newSizeX = minSizeX
+			elseif newSizeX > maxSizeX then
+				newSizeX = maxSizeX
+			end
+
+			goo.Size = UDim2.new(goo.Size.X.Scale, newSizeX, goo.Size.Y.Scale, goo.Size.Y.Offset)
+		end
+		A4:FindFirstChild("DistenceBar").InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				dragging = true
+				dragStart = input.Position
+				startSizeX = A4:FindFirstChild("DistenceBar"):FindFirstChild("colordistence").Size.X.Offset
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+
+		A4:FindFirstChild("DistenceBar").InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+			if input == dragInput and dragging then
+				update(input ,A4:FindFirstChild("DistenceBar"):FindFirstChild("colordistence"))
+			end
+		end)
+
+		A4:FindFirstChild("DistenceBar"):FindFirstChild("colordistence"):GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+			_G.SaTAble.ladis = A4:FindFirstChild("DistenceBar"):FindFirstChild("colordistence").AbsoluteSize.X
+			saveSetting()
+			wait()
+		end)
+	end)
+end
+-----------------Distencetomobfarm---------------------------
+
+----------------------------DistenceFromThemobINdungeon------------------------
+--------------------------------Disformmob-----------------
+if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["Entities"] and game:GetService("Workspace"):FindFirstChild("Raid") or game:GetService("Workspace"):FindFirstChild("Maze")  then
+
+	spawn(function()
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local startSizeX
+		local minSizeX = 0 
+		local maxSizeX = 250
+		local function updatejumb(input , go)
+			local delta = input.Position.X - dragStart.X
+			local newSizeX = startSizeX + delta
+			if newSizeX < minSizeX then
+				newSizeX = minSizeX
+			elseif newSizeX > maxSizeX then
+				newSizeX = maxSizeX
+			end
+
+			go.Size = UDim2.new(go.Size.X.Scale, newSizeX, go.Size.Y.Scale, go.Size.Y.Offset)
+		end
+		RaidScroll.RaidFarm.R2.DistenceBar.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				dragging = true
+				dragStart = input.Position
+				startSizeX = RaidScroll.RaidFarm.R2.DistenceBar.ColoreJfly.Size.X.Offset
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+		RaidScroll.RaidFarm.R2.DistenceBar.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+			if input == dragInput and dragging then
+				updatejumb(input ,RaidScroll.RaidFarm.R2.DistenceBar.ColoreJfly)
+			end
+		end)
+
+		RaidScroll.RaidFarm.R2.DistenceBar.ColoreJfly:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+			_G.SaTAble.RaidDiste = RaidScroll.RaidFarm.R2.DistenceBar.ColoreJfly.AbsoluteSize.X
+			saveSetting()
+			wait()
+		end)
+	end)
+	--------------------------------Disformmob-----------------
+	--------------------------------HPsafe-----------------
+	spawn(function()
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local startSizeX
+		local minSizeX = 0 
+		local maxSizeX = 240
+		local function updatejumb(input , go)
+			local delta = input.Position.X - dragStart.X
+			local newSizeX = startSizeX + delta
+			if newSizeX < minSizeX then
+				newSizeX = minSizeX
+			elseif newSizeX > maxSizeX then
+				newSizeX = maxSizeX
+			end
+
+			go.Size = UDim2.new(go.Size.X.Scale, newSizeX, go.Size.Y.Scale, go.Size.Y.Offset)
+		end
+		RaidScroll.RaidFarm.R2.HPbar.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				dragging = true
+				dragStart = input.Position
+				startSizeX = RaidScroll.RaidFarm.R2.HPbar.ColoreJfly.Size.X.Offset
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+
+		RaidScroll.RaidFarm.R2.HPbar.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				dragInput = input
+			end
+		end)
+		game:GetService("UserInputService").InputChanged:Connect(function(input, gameProcessedEvent)
+			if input == dragInput and dragging then
+				updatejumb(input ,RaidScroll.RaidFarm.R2.HPbar.ColoreJfly)
+			end
+		end)
+
+		RaidScroll.RaidFarm.R2.HPbar.ColoreJfly:GetPropertyChangedSignal("AbsoluteSize"):Connect(function()
+			_G.SaTAble.RaidHP = RaidScroll.RaidFarm.R2.HPbar.ColoreJfly.AbsoluteSize.X * 50
+			RaidScroll.RaidFarm.R2.cmb.Text = RaidScroll.RaidFarm.R2.HPbar.ColoreJfly.AbsoluteSize.X * 50
+			---			RaidScroll.RaidFarm.R2.cmb.Text = _G.SaTAble.RaidHP
+			saveSetting()
+			wait()
+		end)
+	end)
+	--------------------------------HPsafe-----------------
+end
+----------------------------DistenceFromThemobINdungeon------------------------
+-----------------EventBar+function----------------------------------
+-------------------Function-------------Function------------Function----------------------
+-------------PlayerEsp---------------
+-------------PlayerEsp---------------
+-------------FruitEsp---------------
+-------------FruitEsp---------------
+-------------ChestEsp---------------
+-------------ChestEsp---------------
+-------------PlayerSpeed---------------
+-------------PlayerSpeed---------------
+-----------trueClickFunction------
+local function ActiveClcik(C1 ,C2)
+	C1:TweenPosition(UDim2.new(0.558 , 0,0.11,0),1)
+	C2.BackgroundColor3 = Color3.new(0.541176, 0.533333, 0.811765)
+	wait()
+end
+-----------trueClickFunction------
+local function UnActiveClick(C1, C2)
+	C1:TweenPosition(UDim2.new(0.084 , 0,0.11,0) , 1)
+	C2.BackgroundColor3 = Color3.new(0.443137, 0.443137, 0.443137)
+	wait()
+end
+--------------------ActiveSkill-----------
+local function ActiveSkill(S1,S2,F1)
+	F1.BackgroundColor3 = Color3.new(0.266667, 0.266667, 0.337255)
+	local args = {
+		[1] = S1,
+		[2] = S2,
+		[3] = CFrame.new(0,0,0) * CFrame.Angles(0,0,0),
+		[4] = ch.HumanoidRootPart,
+		[5] = 5
+	}
+	game:GetService("ReplicatedStorage").Remotes.requestAbility:FireServer(unpack(args))
+end
+--------------------ActiveSkill-----------
+--------------------UNActiveSkill-----------
+local function UNActiveSkill(F1)
+	F1.BackgroundColor3 = Color3.new(0.160784, 0.160784, 0.203922)
+
+end
+--------------------UNActiveSkill-----------
+--------autoclik-----------
+local function Autoclick(S1 , S2)
+	local args = {
+		[1] = S1,
+		[2] = S2,
+		[3] = CFrame.new(0,0,0) * CFrame.Angles(0,0,0),
+		[4] = ch.HumanoidRootPart,
+		[5] = 5
+	}
+	game:GetService("ReplicatedStorage").Remotes.requestAbility:FireServer(unpack(args))
+end
+------------autoclick------------
+-------------------FlyFunction!----------------
+local function fly()
+	local flying = false
+	local wPressed = false
+	local sPressed = false
+	local aPressed = false
+	local dPressed = false
+	uis.InputBegan:Connect(function(key, chat)
+		if chat then return end
+		if key.KeyCode ==  Enum.KeyCode.H  then
+			if flying  then 
+				flying = false
+			else 
+				flying = true
+				local bv = Instance.new("BodyVelocity", ch.PrimaryPart)
+				bv.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+				bv.Velocity = Vector3.new(0,0,0)
+				bv.Name = "FlightForce"
+				repeat wait(0.1) until flying == false
+				ch.PrimaryPart.FlightForce:Destroy()
+				for i ,v in pairs(game.Workspace:GetDescendants()) do 
+					if v:IsA("Part") or v:IsA("MesPart") then
+						v.CanCollide = true
+					end
+				end
+				bv:Destroy()
+			end
+		end
+
+		if key.KeyCode == Enum.KeyCode.W then
+			wPressed = true
+		elseif key.KeyCode == Enum.KeyCode.S then
+			sPressed = true
+		elseif key.KeyCode == Enum.KeyCode.A then
+			aPressed = true
+		elseif key.KeyCode == Enum.KeyCode.D then
+			dPressed = true
+		end
+	end)
+
+	uis.InputEnded:Connect(function(key)	
+		if key.KeyCode == Enum.KeyCode.W then
+			wPressed = false
+		elseif key.KeyCode == Enum.KeyCode.S then
+			sPressed = false
+		elseif key.KeyCode == Enum.KeyCode.A then
+			aPressed = false
+		elseif key.KeyCode == Enum.KeyCode.D then
+			dPressed = false
+		end
+	end)
+	spawn(function()
+		game["Run Service"].Stepped:Connect(function()
+			if flying == true then
+				ch.PrimaryPart:FindFirstChild("FlightForce").Velocity = Vector3.new(0,0,0)
+				if wPressed then
+					ch.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.LookVector * _G.NorameTAble.valueFly
+				end
+				if sPressed then
+					ch.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.LookVector * -_G.NorameTAble.valueFly	
+				end
+				if aPressed then
+					ch.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.RightVector * -_G.NorameTAble.valueFly		
+				end
+				if dPressed then
+					ch.PrimaryPart:FindFirstChild("FlightForce").Velocity = cam.CFrame.RightVector * _G.NorameTAble.valueFly
+				end
+			else
+				wait(1)
+			end
+		end)
+	end)
+end
+-------------------FlyFunction!----------------
+-------------AutoDefenceFunction-------------------
+
+local function TeleportAll(Place)
+	if ch:FindFirstChild("HumanoidRootPart") then
+		if 	ch:FindFirstChild("HumanoidRootPart").CFrame == Place.CFrame then
+		else
+			ch:FindFirstChild("HumanoidRootPart").CFrame = Place.CFrame
+		end
+		local body = ch:FindFirstChildOfClass("BodyVelocity")
+		if not body then
+			body = Instance.new("BodyVelocity", ch:FindFirstChild("HumanoidRootPart"))
+			body.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+		end
+		body.Velocity = Vector3.new(0, 0, 0)
+	end
+end
+----Second
+local function GoToSwim()
+	spawn(function()
+		while Swim do
+			TeleportAll(game:GetService("Workspace").Map.Ocean["Ocean Floor"])
+			wait()
+		end
+	end)
+	game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+		ch = char
+		wait()
+		TeleportAll(game:GetService("Workspace").Map.Ocean["Ocean Floor"])
+		spawn(function()
+			while Swim do
+				if Swim then
+					TeleportAll(game:GetService("Workspace").Map.Ocean["Ocean Floor"])
+					wait()
+				end
+			end
+		end)
+	end)
+end
+-------------AutoDefenceFunction-------------------
+
+local function whenkill()
+	game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char)
+		ch = char
+		AutoStatsFarm()()
+		wait()
+		spawn(function()
+			while autoattaque == true do
+				if autoattaque == true then
+					AutoStatsFarm()
+					wait()
+				end
+			end
+		end)
+	end)
+end
+
+--------------------AutoFarme-----------------------
+
+local nop = nil
+local function nocpl()
+	for i, a in pairs(ch:GetDescendants()) do
+		if a:IsA("BasePart") and a.CanCollide == true then
+			a.CanCollide = false
+		end
+	end
+end
+local twen 
+local twen2 = false
+local inf = false
+local body
+local function xframer(npc , tim)
+	local	ch = game.Players.LocalPlayer.Character
+	if not npc then
+	elseif npc then
+
+		inf = TweenInfo.new(((ch.HumanoidRootPart.Position - npc.Position).Magnitude) / tim)
+		twen = tw:Create(ch.HumanoidRootPart , inf , {CFrame = npc * CFrame.new(0,_G.SaTAble.ladis,0) * CFrame.Angles(4.5,0,0)})
+		if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
+			body = Instance.new("BodyVelocity" , ch.HumanoidRootPart)
+			body.Name = "sinbad"
+			body.Velocity = Vector3.new(0,0,0)
+			body.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			nop = game:GetService("RunService").Stepped:Connect(nocpl)
+			twen:Play()
+		end
+		twen.Completed:Connect(function ()
+			if ch.HumanoidRootPart:FindFirstChild("sinbad") then
+				ch.HumanoidRootPart:FindFirstChild("sinbad"):Destroy()
+			end
+			nop:Disconnect()
+		end)
+	end
+end
+
+-------------------telepor----------------
+local twen2 
+local twen22 = false
+local inf2 = false
+local body2
+local function xframer2(npc , tim)
+	local	ch = game.Players.LocalPlayer.Character
+	inf2 = TweenInfo.new(((ch.HumanoidRootPart.Position - npc.Position).Magnitude) / tim)
+	twen2 = tw:Create(ch.HumanoidRootPart , inf2 , {CFrame = npc * CFrame.new(0,0,0)})
+	if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
+		body2 = Instance.new("BodyVelocity" , ch.HumanoidRootPart)
+		body2.Name = "sinbad"
+		body2.Velocity = Vector3.new(0,0,0)
+		body2.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+		nop = game:GetService("RunService").Stepped:Connect(nocpl)
+		twen2:Play()
+	end
+	twen2.Completed:Connect(function ()
+		if ch.HumanoidRootPart:FindFirstChild("sinbad") then
+			ch.HumanoidRootPart:FindFirstChild("sinbad"):Destroy()
+		end
+		nop:Disconnect()
+	end)
+end
+---------------------------------
+--------------------AutoFarme-----------------------
+---------------------------------Raid--------------------------
+local function xframeraid(npc , tim)
+	if ch.Humanoid.Health >= _G.SaTAble.RaidHP then
+		inf = TweenInfo.new(((ch.HumanoidRootPart.Position - npc.Position).Magnitude) / tim)
+		twen = tw:Create(ch.HumanoidRootPart , inf , {CFrame = npc * CFrame.new(0,_G.SaTAble.RaidDiste,0) * CFrame.Angles(4.5,0,0)})
+		if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
+			body = Instance.new("BodyVelocity" , ch.HumanoidRootPart)
+			body.Name = "sinbad"
+			body.Velocity = Vector3.new(0,0,0)
+			body.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+			nop = game:GetService("RunService").Stepped:Connect(nocpl)
+			twen:Play()
+		end
+		twen.Completed:Connect(function ()
+			if ch.HumanoidRootPart:FindFirstChild("sinbad") then
+				ch.HumanoidRootPart:FindFirstChild("sinbad"):Destroy()
+			end
+			nop:Disconnect()
+		end)
+	end
+	if   _G.SaTAble.cbcsavezone == true then
+		if ch.Humanoid.Health <= (_G.SaTAble.RaidHP - 1) then
+			inf = TweenInfo.new(((ch.HumanoidRootPart.Position - npc.Position).Magnitude) / tim)
+			twen2 = tw:Create(ch.HumanoidRootPart , inf , {CFrame = npc * CFrame.new(0,300,0) * CFrame.Angles(4.5,0,0)})
+			if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
+				body = Instance.new("BodyVelocity" , ch.HumanoidRootPart)
+				body.Name = "sinbad"
+				body.Velocity = Vector3.new(0,0,0)
+				body.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+				nop = game:GetService("RunService").Stepped:Connect(nocpl)
+				twen2:Play()
+			end
+			twen2.Completed:Connect(function ()
+				if ch.HumanoidRootPart:FindFirstChild("sinbad") then
+					ch.HumanoidRootPart:FindFirstChild("sinbad"):Destroy()
+				end
+				nop:Disconnect()
+			end)
+		end
+
+	end
+end
+---------------------------------Raid--------------------------
+
+-------------------------------PlayerESpfunc--------------------
+
+-----------------------------PlayerESpfunc----------------------
+------------------Function---------------------Function------------------Function----------------
+----------------------------Event-----------------
+
+----------------------------------------------
+-----------------Loading!!----------------------
+--------------
+--
+-----------------------------------------------
+---------------------Main-----------------
+---------------ButtonSpeed--------------------
+M1:FindFirstChild("Buttonspeed"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.SaTAble.cbcSpeed == false then
+		print()
+		if ch then
+			local hum = ch.Humanoid
+			chnagespeed = hum.Changed:Connect(function()
+				hum.WalkSpeed = _G.SaTAble.valuepedd
+				ch.HumanoidRootPart.Anchored = false
+			end)
+			hum.WalkSpeed = _G.SaTAble.valuepedd
+		end
+		saveSetting()
+		ActiveClcik(M1:FindFirstChild("Buttonspeed"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonspeed"))
+		_G.SaTAble.cbcSpeed = true
+	else
+
+		chnagespeed:Disconnect()
+		local hum = ch.Humanoid
+		hum.WalkSpeed = 16 
+		saveSetting()
+		UnActiveClick(M1:FindFirstChild("Buttonspeed"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonspeed"))
+		_G.SaTAble.cbcSpeed = false
+	end
+end)
+---------------ButtonSpeed--------------
+----------------ButtonJamp--------------------
+M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.SaTAble.cbcJumb == false then
+		if ch then
+			local hum = ch.Humanoid
+			chnageJumb = hum.Changed:Connect(function()
+				hum.UseJumpPower = true
+				hum.JumpPower = _G.SaTAble.valueJumb
+				ch.HumanoidRootPart.Anchored = false
+			end)
+			hum.JumpPower = _G.SaTAble.valueJumb
+		end
+		saveSetting()
+		ActiveClcik(M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonjump") )
+		_G.SaTAble.cbcJumb = true
+	else
+		print()
+		chnageJumb:Disconnect()
+		local hum = ch.Humanoid
+		hum.JumpPower = 50  
+		saveSetting()
+		UnActiveClick(M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonjump"))
+		_G.SaTAble.cbcJumb = false
+	end
+end)
+----------------ButtonJamp--------------------
+
+----------------ButtonFly--------------------
+--M2
+M2:FindFirstChild("Buttonfly"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.cbcFly == false then
+		print()
+		fly()
+		ActiveClcik(M2:FindFirstChild("Buttonfly"):FindFirstChild("activordesc") ,M2:FindFirstChild("Buttonfly") )
+		_G.NorameTAble.cbcFly = true
+	else
+		if 	ch.PrimaryPart:FindFirstChild("FlightForce") then
+			ch.PrimaryPart:FindFirstChild("FlightForce"):Destroy()
+		end
+		for i ,v in pairs(game.Workspace:GetDescendants()) do 
+			if v:IsA("Part") or v:IsA("MesPart") then
+				v.CanCollide = true
+			end
+		end
+		UnActiveClick(M2:FindFirstChild("Buttonfly"):FindFirstChild("activordesc") ,M2:FindFirstChild("Buttonfly"))
+		_G.NorameTAble.cbcFly = false
+	end
+end)
+----------------ButtonFly--------------------
+
+-------ButtonNoclip----------
+M2:FindFirstChild("ButtonNoclip"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.cbcNoclip == false then
+		if _G.NorameTAble.cbcFly == true  then
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v:IsA("Part") or v:IsA("MeshPart") then
+					v.CanCollide = false
+				end
+			end 
+		end
+		ActiveClcik(M2:FindFirstChild("ButtonNoclip"):FindFirstChild("activordesc") ,M2:FindFirstChild("ButtonNoclip") )
+		_G.NorameTAble.cbcNoclip = true
+	else
+		for i,v in pairs(game.Workspace:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("MeshPart") then
+				v.CanCollide = true
+			end
+		end
+		UnActiveClick(M2:FindFirstChild("ButtonNoclip"):FindFirstChild("activordesc") ,M2:FindFirstChild("ButtonNoclip"))
+		_G.NorameTAble.cbcNoclip = false
+	end
+end)
+------------ButtonNoclip---------------------
+--------------------ButtonAutoDefence---------------------
+M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.SaTAble.cbcDefence == false then
+		Swim = true
+		GoToSwim()
+		ActiveClcik(M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc") ,M4:FindFirstChild("AutoDefence") )
+		_G.SaTAble.cbcDefence = true
+		saveSetting()
+	else
+		print()
+		Swim = false
+		UnActiveClick(M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc") ,M4:FindFirstChild("AutoDefence"))
+		_G.SaTAble.cbcDefence = false
+		saveSetting()
+	end
+end)
+-------------ButtonAutoDefence---------------------
+-------------ButtonAutoStatsFarm---------------------
+M4:FindFirstChild("AutoFruitBuy"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if 	_G.NorameTAble.cbcAutoFruitBuy == false then
+		_G.NorameTAble.cbcAutoFruitBuy = true
+		ActiveClcik(M4:FindFirstChild("AutoFruitBuy"):FindFirstChild("activordesc") , M4:FindFirstChild("AutoFruitBuy"))
+		spawn(function()
+			while _G.NorameTAble.cbcAutoFruitBuy do
+				if 	_G.NorameTAble.cbcAutoFruitBuy == true then
+					local args = {
+						[1] = "1"
+					}
+					game:GetService("ReplicatedStorage").Remotes.buyrngdf:FireServer(unpack(args))
+				end
+				wait()
+			end
+		end)
+	else
+		_G.NorameTAble.cbcAutoFruitBuy = false
+		UnActiveClick(M4:FindFirstChild("AutoFruitBuy"):FindFirstChild("activordesc") , M4:FindFirstChild("AutoFruitBuy"))
+	end
+end)
+-------------ButtonAutoStatsFarm---------------------
+-------------chosetheskiil---------------------
+-------------chosetheskiilFruit---------------------
+
+M5:FindFirstChild("FruitUse"):FindFirstChild("click").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.Opfruse == false then
+		wait(0.5)
+		_G.NorameTAble.Opfruse = false
+		M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		_G.NorameTAble.OpMelle = false
+		M5:FindFirstChild("MelleUse").Visible = false
+		M5:FindFirstChild("SwordUse").Visible = false
+		M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)	
+		_G.NorameTAble.Opfruse = true
+	else
+		wait(0.5)
+		_G.NorameTAble.Opfruse = false
+		M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		M5:FindFirstChild("MelleUse").Visible = true
+		M5:FindFirstChild("SwordUse").Visible = true
+	end
+end)
+--------------------------------QFruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitQ == false then
+		_G.SaTAble.SaFruitKey.FruitQ = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitQ do 
+				if _G.SaTAble.SaFruitKey.FruitQ == true then
+					ActiveSkill("Devil Fruit" ,"Q" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitQ = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+		saveSetting()
+	end
+end)
+--------------------------------EFruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitE == false then
+		_G.SaTAble.SaFruitKey.FruitE = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitE do 
+				if _G.SaTAble.SaFruitKey.FruitE == true then
+					ActiveSkill("Devil Fruit" ,"E" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitE = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+		saveSetting()
+	end
+end)
+--------------------------------FFruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitF == false then
+		_G.SaTAble.SaFruitKey.FruitF = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitF do 
+				if _G.SaTAble.SaFruitKey.FruitF == true then
+					ActiveSkill("Devil Fruit" ,"F" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitF = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+		saveSetting()
+	end
+end)
+--------------------------------RruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitR == false then
+		_G.SaTAble.SaFruitKey.FruitR = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitR do 
+				if _G.SaTAble.SaFruitKey.FruitR == true then
+					ActiveSkill("Devil Fruit" ,"R" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitR = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+		saveSetting()
+	end
+end)
+--------------------------------TruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitT == false then
+		_G.SaTAble.SaFruitKey.FruitT = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitT do 
+				if _G.SaTAble.SaFruitKey.FruitT == true then
+					ActiveSkill("Devil Fruit" ,"T" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitT = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+		saveSetting()
+	end
+end)
+-----
+--------------------------------GruitSkill-----------------
+M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaFruitKey.FruitG == false then
+		_G.SaTAble.SaFruitKey.FruitG = true
+		spawn(function()
+			while _G.SaTAble.SaFruitKey.FruitG do 
+				if _G.SaTAble.SaFruitKey.FruitG == true then
+					ActiveSkill("Devil Fruit" ,"G" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaFruitKey.FruitG = false
+		UNActiveSkill(M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+		saveSetting()
+	end
+end)-----------------------------.---------------------------------------
+-------------chosetheskiilFruit---------------------
+--------------ChoseSkillMelle-------------------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("click").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.OpMelle == false then
+		wait(0.5)
+		_G.NorameTAble.OpMelle = true
+		M5:FindFirstChild("SwordUse").Visible = false
+		_G.NorameTAble.OpSword = false
+		M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)	
+	else
+		wait(0.5)
+		_G.NorameTAble.OpMelle = false
+		M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		M5:FindFirstChild("SwordUse").Visible = true
+		_G.NorameTAble.OpMelle = false
+	end
+end)
+--------------------------------QmelleUse-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleQ == false then
+		_G.SaTAble.SaMelleKey.MelleQ = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleQ do 
+				if _G.SaTAble.SaMelleKey.MelleQ == true then
+					ActiveSkill("Fighting Style" ,"Q" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleQ = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+		saveSetting()
+	end
+end)
+--------------------------------EmelleUse-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleE == false then
+		_G.SaTAble.SaMelleKey.MelleE = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleE do 
+				if _G.SaTAble.SaMelleKey.MelleE == true then
+					ActiveSkill("Fighting Style" ,"E" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleE = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+		saveSetting()
+	end
+end)
+--------------------------------FmelleUse-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleF == false then
+		_G.SaTAble.SaMelleKey.MelleF = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleF do 
+				if _G.SaTAble.SaMelleKey.MelleF == true then
+					ActiveSkill("Fighting Style" ,"F" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleF = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+		saveSetting()
+	end
+end)
+--------------------------------RmelleUse-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleR == false then
+		_G.SaTAble.SaMelleKey.MelleR = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleR do 
+				if _G.SaTAble.SaMelleKey.MelleR == true then
+					ActiveSkill("Fighting Style" ,"R" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleR = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+		saveSetting()
+	end
+end)
+--------------------------------TmelleUs-e-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleT == false then
+		_G.SaTAble.SaMelleKey.MelleT = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleT do 
+				if _G.SaTAble.SaMelleKey.MelleT == true then
+					ActiveSkill("Fighting Style" ,"T" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleT = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+		saveSetting()
+	end
+end)
+--------------------------------TmelleUs-e-----------------
+M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaMelleKey.MelleG == false then
+		_G.SaTAble.SaMelleKey.MelleG = true
+		spawn(function()
+			while _G.SaTAble.SaMelleKey.MelleG do 
+				if _G.SaTAble.SaMelleKey.MelleG == true then
+					ActiveSkill("Fighting Style" ,"G" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaMelleKey.MelleG = false
+		UNActiveSkill(M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+		saveSetting()
+	end
+end)
+--------------ChoseSkillMelle-------------------------
+------------------ChoseSkillSword------------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("click").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.OpSword == false then
+		wait()
+		main2:FindFirstChild("M6").Visible = false
+		M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)	
+		_G.NorameTAble.OpSword = true
+
+	else
+		wait(0.5)
+		main2:FindFirstChild("M6").Visible = true
+		M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		_G.NorameTAble.OpSword = false
+
+	end
+end)
+--------------------------------QFruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordQ == false then
+		_G.SaTAble.SaSwordKey.SwordQ = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordQ do 
+				if _G.SaTAble.SaSwordKey.SwordQ == true then
+					ActiveSkill("Sword Style" ,"Q" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordQ = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+		saveSetting()
+	end
+end)
+--------------------------------EFruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordE == false then
+		_G.SaTAble.SaSwordKey.SwordE = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordE do 
+				if _G.SaTAble.SaSwordKey.SwordE == true then
+					ActiveSkill("Sword Style" ,"E" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordE = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+		saveSetting()
+	end
+end)
+--------------------------------FFruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordF == false then
+		_G.SaTAble.SaSwordKey.SwordF = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordF do 
+				if _G.SaTAble.SaSwordKey.SwordF == true then
+					ActiveSkill("Sword Style" ,"F" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordF = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+		saveSetting()
+	end
+end)
+--------------------------------RruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordR == false then
+		_G.SaTAble.SaSwordKey.SwordR = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordR do 
+				if _G.SaTAble.SaSwordKey.SwordR == true then
+					ActiveSkill("Sword Style" ,"R" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordR = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+		saveSetting()
+	end
+end)
+--------------------------------TruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordT == false then
+		_G.SaTAble.SaSwordKey.SwordT = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordT do 
+				if _G.SaTAble.SaSwordKey.SwordT == true then
+					ActiveSkill("Sword Style" ,"T" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordT = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+		saveSetting()
+	end
+end)
+--------------------------------GruitSkill-----------------
+M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G").MouseButton1Click:Connect(function()
+	if _G.SaTAble.SaSwordKey.SwordG == false then
+		_G.SaTAble.SaSwordKey.SwordG = true
+		spawn(function()
+			while _G.SaTAble.SaSwordKey.SwordG do 
+				if _G.SaTAble.SaSwordKey.SwordG == true then
+					ActiveSkill("Sword Style" ,"G" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+				end
+				wait(1.5)
+			end
+		end)
+		saveSetting()
+	else
+		_G.SaTAble.SaSwordKey.SwordG = false
+		UNActiveSkill(M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("G"))
+		saveSetting()
+	end
+end)
+-------------------ChoseSwprdSkill-----------------------
+-------------chosetheskiil---------------------
+-----------------M6--------------
+------------autodivilefruitreset-------------
+M6:FindFirstChild("DivileFruitRemove"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("removedf"):FireServer()
+end)
+------------autodivilefruitreset-------------
+---------------INFDASH--------------
+M6:FindFirstChild("INFdash"):FindFirstChild("activordesc").MouseButton1Click:Connect(function() 
+	if _G.NorameTAble.cbcINFdash == false  then
+		local inf = "Dash"
+		local func 
+		for i ,v in pairs(getgc()) do
+			if type(v) == "function" and not is_synapse_function(v) and getinfo(v).name then
+				if getinfo(v).name == inf then
+					func = v
+				end
+			end
+		end
+		ch["Dash Handler"].Enabled = false
+		-------KeyCodeDBC--------------
+		local w = false
+		local s = false
+		local a = false
+		local d = false
+		local space = false
+		-------KeyCodeDBC--------------		
+		ActiveClcik(M6:FindFirstChild("INFdash"):FindFirstChild("activordesc") ,M6:FindFirstChild("INFdash") )
+
+		mouse.KeyDown:connect(function(key)	
+			---------W
+			if key == "w" then
+				if w == false then
+					w = true
+					wait(0.2)
+					w = false
+				else
+					ch["Dash Handler"].Enabled = false
+					setconstant(func , 4 , "W") 
+					if func then
+						func(Enum.KeyCode.W)
+					end
+					w = false
+				end
+
+				-----S
+			elseif key == "s" then
+				if s == false then
+					s = true
+					wait(0.2)
+					s = false
+				else
+					ch["Dash Handler"].Enabled = false
+					setconstant(func , 4 , "S") --v20
+					if func then
+						func(Enum.KeyCode.S)
+					end
+					s = false
+				end
+
+				---------A
+			elseif key == "a" then
+				if a == false then
+					a = true
+					wait(0.2)
+					a = false
+				else
+					ch["Dash Handler"].Enabled = false
+					setconstant(func , 4 , "A") 
+					if func then
+						func(Enum.KeyCode.A)
+					end
+					a = false
+				end
+
+				---------D
+			elseif key == "d" then
+				if d == false then
+					d = true
+					wait(0.2)
+					d = false
+				else
+					ch["Dash Handler"].Enabled = false
+					setconstant(func , 4 , "D") 
+					if func then
+						func(Enum.KeyCode.D)
+					end
+					d = false
+				end
+				---------Space
+			elseif key == " " then
+				if space == false then
+					space = true
+					wait(0.2)
+					space = false
+				else
+					ch["Dash Handler"].Enabled = false
+					setconstant(func , 4 , "Space") 
+					if func then
+						func(Enum.KeyCode.Space)
+					end
+					space = false
+				end
+			end
+		end)
+		_G.NorameTAble.cbcINFdash = true
+	else
+		ch:FindFirstChild("Dash Handler").Enabled = true
+		_G.NorameTAble.cbcINFdash = false
+		UnActiveClick(M6:FindFirstChild("INFdash"):FindFirstChild("activordesc") ,M6:FindFirstChild("INFdash") )
+	end
+end)
+---------------INFDASH--------------
+-----------------M6--------------
+---------------------Main-----------------
+--------------------AutoFarme-----------------------
+
+--------Open-----------
+--------------QuelEstLeNpc----------------
+if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
+
+
+	A1:FindFirstChild("AutoFarm"):FindFirstChild("click").MouseButton1Click:Connect(function()
+		if _G.NorameTAble.OpenAutofarm == false then
+			wait(1)
+			A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+			A1:FindFirstChild("AutoFarm"):FindFirstChild("ImageLabel").Rotation = 180
+			local NPC = {}
+			for i , v in pairs(game.ReplicatedStorage:GetChildren()) do 
+				if v:FindFirstChild("Data") and v:FindFirstChild("Humanoid") then
+					table.insert(NPC , v)
+				end
+			end
+			local unique = {}
+			for i , v in pairs(NPC) do 
+				local name = v.Name
+				if not unique[name] then
+					unique[name] = true
+					local clone = A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("NPC"):Clone()
+					clone.Parent = A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+					clone.Text = v.Name
+					clone.Name = v.Name
+					clone.Visible = true
+					clone.MouseButton1Click:Connect(function()
+						A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.01)	
+						A1:FindFirstChild("AutoFarm"):FindFirstChild("ImageLabel").Rotation = 0
+						_G.NorameTAble.OpenAutofarm = false
+						A1:FindFirstChild("AutoFarm"):FindFirstChild("statsname").Text = clone.Text
+						_G.SaTAble.NPC =  A1:FindFirstChild("AutoFarm"):FindFirstChild("statsname").Text
+						saveSetting()
+						_G.NorameTAble.OpenAutofarm = false
+						spawn(function()
+							for i =1,5  do
+								if 	_G.NorameTAble.OpenAutofarm == false then
+									for i , v in pairs(A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+										if v.ClassName == "TextButton" and v ~= A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("NPC") then
+											v:Destroy()
+										end
+									end
+								end
+								wait()
+							end
+						end)
+					end)
+				end
+			end 
+			_G.NorameTAble.OpenAutofarm = true
+			wait(0.4)
+		else
+
+			wait(0.7)
+			A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.01)	
+			A1:FindFirstChild("AutoFarm"):FindFirstChild("ImageLabel").Rotation = 0
+			for i , v in pairs(A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+				if v.ClassName == "TextButton" and v ~= A1:FindFirstChild("AutoFarm"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("NPC") then
+					v:Destroy()
+				end
+			end
+			_G.NorameTAble.OpenAutofarm = false
+
+		end	
+	end)
+	--------Open-----------
+	--------------QuelEstLeNpc----------------
+
+	----------------------------------------------------Function!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------------------------
+
+	----------------------------------------------------Function!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-------------------------------------------------------
+
+	--------------------ActivationdeAutoFamr-------------------------
+	local function NPC(mob)
+		local dist, thing = math.huge
+		for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+			if v.Name == mob then
+				local posi = (ch.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+				if posi < dist then 
+					dist = posi 
+					thing = v 
+				end
+			end
+		end
+		return thing
+	end
+	local function NPC1(mob)
+		local dist, thing = math.huge
+		for i, v in pairs( game.ReplicatedStorage:GetChildren()) do
+			if v.Name == mob then
+				local posi = (ch.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+				if posi < dist then 
+					dist = posi 
+					thing = v 
+				end
+			end
+		end
+		return thing
+	end
+	A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.AutoMob == false then
+			wait(0.5)
+			_G.SaTAble.AutoMob = true
+			game.Workspace.Gravity = 0
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+			local po 
+			local here
+			------------------toutEstDedans..................---------------
+			spawn(function()
+				while _G.SaTAble.AutoMob do
+					if AutoFarmFrame  then
+						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+						here = game.ReplicatedStorage:FindFirstChild(qui)
+						if here == nil then	
+						elseif here then
+							po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+						end
+						if  here == nil then
+							print("mon = NIL")
+							pcall(function()
+								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+							end)
+						elseif po <= 800 then
+							print(1)
+							pcall(function()
+								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+							end)
+						elseif po >= 500 then
+							if here == nil then	
+							elseif here then
+								xframer(here.HumanoidRootPart.CFrame , 500)
+							end
+						end
+						wait()
+					end
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				wait()
+				print("ac")		
+				spawn(function()
+					while _G.SaTAble.AutoMob do
+						if not  ch:FindFirstChild("HumanoidRootPart") then
+						elseif ch:FindFirstChild("HumanoidRootPart") then		
+							if AutoFarmFrame  then
+								local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								here = game.ReplicatedStorage:FindFirstChild(qui)
+								if here == nil then	
+								elseif here then
+									po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+								end
+								if  here == nil then
+									pcall(function()
+										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+									end)
+								elseif po <= 800 then
+									print(1)
+									pcall(function()
+										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+									end)
+								elseif po >= 500 then
+									if here == nil then	
+									elseif here then
+										xframer(here.HumanoidRootPart.CFrame , 500)
+									end
+								end
+							end
+						end	
+						wait()
+					end
+				end)
+			end)
+
+			------------------toutEstDedans..................---------------
+			ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
+			saveSetting()
+		else
+			wait(0.5)
+			game.Workspace.Gravity = 196
+			for i, a in pairs(ch:GetDescendants()) do
+				if a:IsA("BasePart") and a.CanCollide == false then
+					a.CanCollide = true
+				end
+			end
+			UnActiveClick(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
+			_G.SaTAble.AutoMob = false
+			saveSetting()
+		end
+	end)
+	--------------------ActivationdeAutoFamr-------------------------
+	-------------------ButtonAutoCklicker---------------
+	A4:FindFirstChild("autoclick"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.cbcAutoCkick == false then
+			wait(0.5)
+			_G.SaTAble.cbcAutoCkick = true
+			ActiveClcik(A4:FindFirstChild("autoclick"):FindFirstChild("activordesc") ,A4:FindFirstChild("autoclick") )
+			spawn(function()
+				while _G.SaTAble.cbcAutoCkick do 
+					Autoclick("Sword Style" , "MouseButton1"  )
+					Autoclick("Fighting Style" , "MouseButton1"  )		
+					Autoclick("Devil Fruit" , "MouseButton1" )
+					wait(0.2)
+				end
+			end)
+			saveSetting()
+		else
+			wait(0.5)
+			_G.SaTAble.cbcAutoCkick = false
+			saveSetting()
+			UnActiveClick(A4:FindFirstChild("autoclick"):FindFirstChild("activordesc") ,A4:FindFirstChild("autoclick") )
+		end
+	end)
+end
+-------------------ButtonAutoCklicker---------------
+--------------QuelEstLeNpc----------------
+---------------------AutoFarm---------------------
+-------------------------------Player------------------
+-----------------------------PlayerESp-----------------
+----_G.NorameTAble.cbcPlayerEsp
+local run 
+
+P1:FindFirstChild("PlayerEsp"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.cbcPlayerEsp == false then
+		_G.NorameTAble.cbcPlayerEsp = true
+		wait(0.5)
+		ActiveClcik(P1:FindFirstChild("PlayerEsp"):FindFirstChild("activordesc") ,P1:FindFirstChild("PlayerEsp") )
+		local BillboardGui1 = Instance.new("BillboardGui")
+		BillboardGui1["LightInfluence"] = 0
+		BillboardGui1["Name"] = "PlayerEspSinbad"
+		BillboardGui1["Active"] = true
+		BillboardGui1["StudsOffset"] = Vector3.new(0, 5, 0)
+		BillboardGui1["Size"] = UDim2.new(0, 50, 0, 20)
+		BillboardGui1.AlwaysOnTop = true
+		BillboardGui1.MaxDistance = math.huge
+		----BillboardGui1----
+		--Frame2--
+		local Frame2 = Instance.new("Frame",BillboardGui1)
+		Frame2["Size"] = UDim2.new(1.29999995, 0, 1, 0)
+		Frame2["BackgroundTransparency"] = 1
+		Frame2["BackgroundColor3"] = Color3.new(1, 1, 1)
+		----Frame2----
+		--TextLabel3--
+		local TextLabel3 = Instance.new("TextLabel",Frame2)
+		TextLabel3["TextWrapped"] = true
+		TextLabel3["TextColor3"] = Color3.new(0.0980392, 0.0862745, 0.133333)
+		TextLabel3["Text"] = "PlayerName"
+		TextLabel3["TextStrokeTransparency"] = 0.8999999761581421
+		TextLabel3["Font"] = Enum.Font.Jura
+		TextLabel3["Name"] = "PlayerName"
+		TextLabel3["Position"] = UDim2.new(-0.5, 0, 0, 0)
+		TextLabel3["Size"] = UDim2.new(1, 0, 0.5, 0)
+		TextLabel3["BackgroundTransparency"] = 2
+		TextLabel3["TextSize"] = 10
+		TextLabel3["BackgroundColor3"] = Color3.new(1, 1, 1)
+		----TextLabel3----
+		--TextLabel4--
+		local TextLabel4 = Instance.new("TextLabel",Frame2)
+		TextLabel4["TextWrapped"] = true
+		TextLabel4["TextColor3"] = Color3.new(1, 0.0235294, 0.0392157)
+		TextLabel4["Text"] = "Health"
+		TextLabel4["TextSize"] = 14
+		TextLabel4["Font"] = Enum.Font.RobotoMono
+		TextLabel4["Name"] = "Health"
+		TextLabel4["Position"] = UDim2.new(-0.5, 0, 0.5, 0)
+		TextLabel4["Size"] = UDim2.new(1, 0, 0.5, 0)
+		TextLabel4["BackgroundTransparency"] = 1
+		TextLabel4["TextScaled"] = true
+		TextLabel4["BackgroundColor3"] = Color3.new(1, 1, 1)
+		----TextLabel4----
+		--TextLabel5--
+		local TextLabel5 = Instance.new("TextLabel",Frame2)
+		TextLabel5["TextWrapped"] = true
+		TextLabel5["TextColor3"] = Color3.new(0, 0, 0)
+		TextLabel5["TextStrokeColor3"] = Color3.new(0.541176, 0.541176, 0.541176)
+		TextLabel5["Text"] = "10000.19"
+		TextLabel5["TextStrokeTransparency"] = 0.699999988079071
+		TextLabel5["Font"] = Enum.Font.Jura
+		TextLabel5["Name"] = "Distance"
+		TextLabel5["Position"] = UDim2.new(0.3, 0, -0.100000001, 0)
+		TextLabel5["Size"] = UDim2.new(1, 0, 1, 0)
+		TextLabel5["BackgroundTransparency"] = 1
+		TextLabel5["TextSize"] = 21
+		TextLabel5["BackgroundColor3"] = Color3.new(1, 1, 1)
+		----TextLabel5----
+
+		for i ,v in pairs(game.Players:GetPlayers()) do
+			if v ~= player and v.Character:FindFirstChild("HumanoidRootPart") then
+				run = game:GetService("RunService").RenderStepped:Connect(function()
+					if 	_G.NorameTAble.cbcPlayerEsp then
+						if not  v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("PlayerEspSinbad") then
+							TextLabel3.Text = v.Name
+							TextLabel4.Text = v.Character.Humanoid.Health
+							spawn(function()
+								v.Character.Humanoid.HealthChanged:Connect(function(health)
+									TextLabel4.Text = health
+								end)
+							end)
+							local clone = BillboardGui1:Clone()
+							clone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
+							spawn(function()
+								while true do
+									local po = (game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position - v.Character:FindFirstChild("HumanoidRootPart").Position).magnitude
+									v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("PlayerEspSinbad"):FindFirstChild("Frame"):FindFirstChild("Distance").Text = po
+									wait()
+								end
+							end)
+						end
+					end
+				end)
+			end
+		end
+	else
+		wait(0.5)
+		_G.NorameTAble.cbcPlayerEsp = false
+		run:Disconnect()
+		for i , v in pairs(game.Players:GetPlayers()) do
+			if v ~= player and v.Character:FindFirstChild("HumanoidRootPart") then
+				if v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("PlayerEspSinbad") then
+					v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("PlayerEspSinbad"):Destroy()
+				end
+			end
+		end
+		UnActiveClick(P1:FindFirstChild("PlayerEsp"):FindFirstChild("activordesc") ,P1:FindFirstChild("PlayerEsp") )
+
+	end
+end)
+-----------------------------PlayerESp-----------------
+------------------PlayerLook------------------
+local who = P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland.Qui
+P2:FindFirstChild("PlayerToLook"):FindFirstChild("click").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.Opplayerlook == false then
+		_G.NorameTAble.Opplayerlook = true
+		wait(1)
+		P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+		P2:FindFirstChild("PlayerToLook"):FindFirstChild("ImageLabel").Rotation = 180
+		wait(0.1)
+		local joueur  = {}
+		for i , v in pairs(game.Players:GetPlayers()) do     
+			table.insert(joueur , v )
+		end 
+		for i , v in pairs(joueur) do
+			if v ~= game.Players.LocalPlayer and v.Character:FindFirstChild("Humanoid") then
+				local clone = who:Clone()
+				clone.Text = v.Name
+				clone.Parent = who.Parent
+				clone.Visible = true
+				clone.Name = v.Name
+				clone.MouseButton1Click:Connect(function()
+					_G.NorameTAble.cbcwhoName = clone.Text
+					P2:FindFirstChild("PlayerToLook").statsname.Text = clone.Text
+					wait(0.5)
+					P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+					P2:FindFirstChild("PlayerToLook"):FindFirstChild("ImageLabel").Rotation = 0
+					_G.NorameTAble.Opplayerlook = false
+					spawn(function()
+						for i =1,5  do
+							if 	_G.NorameTAble.Opplayerlook == false then
+								for i , v in pairs(P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+									if v.ClassName == "TextButton" and v ~= who then
+										v:Destroy()
+									end
+								end
+							end 
+							wait()
+						end
+					end)
+				end)
+			end
+		end
+	else
+		wait(1)
+		_G.NorameTAble.Opplayerlook = false
+		P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		P2:FindFirstChild("PlayerToLook"):FindFirstChild("ImageLabel").Rotation = 0
+		for i , v in pairs(P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+			if v.ClassName == "TextButton" and v ~= who then
+				v:Destroy()
+			end
+		end 
+		spawn(function()
+			for i =1,5  do
+				if 	_G.NorameTAble.Opplayerlook == false then
+					for i , v in pairs(P2:FindFirstChild("PlayerToLook"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+						if v.ClassName == "TextButton" and v ~= who then
+							v:Destroy()
+						end
+					end
+				end 
+				wait()
+			end
+		end)
+	end	
+end)
+------------------GOLOOK-----------------------------
+P2:FindFirstChild("WhoLook"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.cbcLookautorise == false then
+		wait(0.5)
+		_G.NorameTAble.cbcLookautorise = true
+		ActiveClcik(P2:FindFirstChild("WhoLook"):FindFirstChild("activordesc") ,P2:FindFirstChild("WhoLook") )
+		spawn(function()
+			while 	_G.NorameTAble.cbcLookautorise  do
+				if _G.NorameTAble.cbcLookautorise  == true then
+					local name = P2:FindFirstChild("PlayerToLook").statsname.Text
+					game.Workspace.Camera.CameraSubject = game.Players[name].Character
+					wait()
+				end
+			end
+		end)
+	else
+
+		wait(0.5)
+		UnActiveClick(P2:FindFirstChild("WhoLook"):FindFirstChild("activordesc") ,P2:FindFirstChild("WhoLook") )
+		game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character
+		_G.NorameTAble.cbcLookautorise = false
+	end	
+end)
+------------------GOLOOK-----------------------------
+------------------PlayerTP---------------------
+P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.cbctptpplayer == false then
+		wait(0.5)
+		_G.NorameTAble.cbctptpplayer = true
+		ActiveClcik(P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc") ,P2:FindFirstChild("WhoButtonTP") )
+		spawn(function()
+			while _G.NorameTAble.cbctptpplayer  do
+				print()
+				if not ch:FindFirstChild("HumanoidRootPart") then
+				elseif ch:FindFirstChild("HumanoidRootPart") then
+					local name = P2:FindFirstChild("PlayerToLook").statsname.Text
+					xframer2(game.Players[name].Character:FindFirstChild("HumanoidRootPart").CFrame , 500)
+					print()
+				end
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			spawn(function()
+				while _G.NorameTAble.cbctptpplayer  do
+					print()
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print()
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						local name = P2:FindFirstChild("PlayerToLook").statsname.Text
+						xframer2(game.Players[name].Character:FindFirstChild("HumanoidRootPart").CFrame , 500)
+					end
+					wait()
+				end
+			end)
+		end)
+	else
+
+		wait(0.5)
+		UnActiveClick(P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc") ,P2:FindFirstChild("WhoButtonTP") )
+		_G.NorameTAble.cbctptpplayer = false
+	end	
+end)
+------------------PlayerTP---------------------
+------------------PlayerLook------------------
+--------------------PlayerAutoEquipe-------------------
+local quel = P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland.Tool
+P3:FindFirstChild("SetelectTool"):FindFirstChild("click").MouseButton1Click:Connect(function()
+	if _G.NorameTAble.Opequiptool == false then
+		_G.NorameTAble.Opequiptool = true
+		wait(1)
+		Playerscroll.CanvasSize = UDim2.new(0,0,2.3,0)
+		PlayerFramm:FindFirstChild("Deco").Visible = false
+		P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+		P3:FindFirstChild("SetelectTool"):FindFirstChild("ImageLabel").Rotation = 180
+		wait(0.1)
+		local toolTable  = {}
+		for i , v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v:FindFirstChild("Handle") then
+				---r
+			else
+				if v:IsA("Tool") then
+					table.insert(toolTable , v )
+				end
+			end
+		end 
+
+		for i ,v in pairs(toolTable) do 
+			local clone = quel:Clone()
+			clone.Text = v.Name
+			clone.Parent = quel.Parent
+			clone.Name = v.Name
+			clone.Visible = true
+			clone.MouseButton1Click:Connect(function()
+				P3:FindFirstChild("SetelectTool"):FindFirstChild("statsname").Text = clone.Text
+				_G.SaTAble.Item = P3:FindFirstChild("SetelectTool"):FindFirstChild("statsname").Text
+				saveSetting()
+				saveSetting()
+				wait(0.5)
+				_G.NorameTAble.Opequiptool = false
+				PlayerFramm:FindFirstChild("Deco").Visible = true
+				P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+				P3:FindFirstChild("SetelectTool"):FindFirstChild("ImageLabel").Rotation = 0
+				for i , v in pairs(P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+					if v.ClassName == "TextButton" and v ~= quel then
+						v:Destroy()
+					end
+				end
+			end)
+		end
+	else
+		for i , v in pairs(P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+			if v.ClassName == "TextButton" and v ~= quel then
+				v:Destroy()
+			end
+		end
+		wait(1)
+		_G.NorameTAble.Opequiptool = false
+		PlayerFramm:FindFirstChild("Deco").Visible = true
+		P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+		P3:FindFirstChild("SetelectTool"):FindFirstChild("ImageLabel").Rotation = 0
+		for i , v in pairs(P3:FindFirstChild("SetelectTool"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame").Listeisland:GetChildren()) do
+			if v.ClassName == "TextButton" and v ~= quel then
+				v:Destroy()
+			end
+		end 
+	end	
+end)
+P3:FindFirstChild("buttonEquipe"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+	if _G.SaTAble.cbequipe == false then
+		wait(0.5)
+		_G.SaTAble.cbequipe = true
+		saveSetting()
+		ActiveClcik(P3:FindFirstChild("buttonEquipe"):FindFirstChild("activordesc") ,P3:FindFirstChild("buttonEquipe") )
+		spawn(function()
+			while 	_G.SaTAble.cbequipe  do
+				if _G.SaTAble.cbequipe  == true then
+					for i , v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+						if v:FindFirstChild("Handle") then
+							---r
+						else
+							if v:IsA("Tool") then
+								if v.Name == P3.SetelectTool.statsname.Text then
+									game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+								end
+							end
+						end
+					end 
+				end
+				wait(0.5)
+			end
+		end)		
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			spawn(function()
+				while 	_G.SaTAble.cbequipe  do
+					if _G.SaTAble.cbequipe  == true then
+						for i , v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+							if v:FindFirstChild("Handle") then
+								---r
+							else
+								if v:IsA("Tool") then
+									if v.Name == P3.SetelectTool.statsname.Text then
+										game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+									end
+								end
+							end
+						end 
+					end
+					wait(0.5)
+				end
+			end)
+		end)
+
+	else
+
+		wait(0.5)
+		_G.SaTAble.cbequipe = false
+		saveSetting()
+		UnActiveClick(P3:FindFirstChild("buttonEquipe"):FindFirstChild("activordesc") ,P3:FindFirstChild("buttonEquipe") )
+	end	
+end)
+--------------------PlayerAutoEquipe-------------------
+-----------------Raid------------------
+------------------AutoRaid----------------
+if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
+
+
+
+	R1:FindFirstChild("AutoRaid"):FindFirstChild("click").MouseButton1Click:Connect(function()
+		if _G.NorameTAble.OpeRaid == false then
+			_G.NorameTAble.OpeRaid = true
+			wait(1)
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("ImageLabel").Rotation = 180
+		else
+			wait(1)
+			_G.NorameTAble.OpeRaid = false
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("ImageLabel").Rotation = 0
+		end	
+	end)
+	local raid = {}
+	for i ,v in pairs(game.Workspace.Zones:GetChildren()) do
+		if v:IsA("Part")	 and v.ClassName == "Part" then
+			table.insert(raid , v)
+		end
+	end
+
+	for i , v in pairs(raid) do
+		local clone = R1:FindFirstChild("AutoRaid"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+		clone.Name = v.Name
+		clone.Parent = R1:FindFirstChild("AutoRaid"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+		clone.Visible = true
+		clone.Text = v.Name
+		clone.MouseButton1Click:Connect(function()
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text = clone.Text
+			wait(0.5)
+			_G.NorameTAble.OpeRaid = false
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R1:FindFirstChild("AutoRaid"):FindFirstChild("ImageLabel").Rotation = 0
+			_G.SaTAble.cbcRaid = clone.Text
+			saveSetting()
+		end)
+	end
+
+	R1:FindFirstChild("ButtonsAutoRaide"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.Laquel.raId == false then
+			wait(0.5)
+			_G.SaTAble.Laquel.raId = true
+			saveSetting()
+			ActiveClcik(R1:FindFirstChild("ButtonsAutoRaide"):FindFirstChild("activordesc") ,R1:FindFirstChild("ButtonsAutoRaide") )	
+			spawn(function()
+				while _G.SaTAble.Laquel.raId do
+					local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
+					xframer2(game.Workspace.Zones[ou].CFrame , 500)
+					wait()
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				print("active")
+				wait()
+				spawn(function()
+					while _G.SaTAble.Laquel.raId do
+						print()
+						if not ch:FindFirstChild("HumanoidRootPart") then
+							print()
+						elseif ch:FindFirstChild("HumanoidRootPart") then
+							local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
+							xframer2(game.Workspace.Zones[ou].CFrame , 500)
+						end
+						wait()
+					end
+				end)
+			end)
+		else
+
+			wait(0.5)
+			_G.SaTAble.Laquel.raId = false
+			saveSetting()
+			UnActiveClick(R1:FindFirstChild("ButtonsAutoRaide"):FindFirstChild("activordesc") ,R1:FindFirstChild("ButtonsAutoRaide") )
+		end	
+	end)
+	------------------AutoMaze-----------------
+	R3:FindFirstChild("AutoMaze"):FindFirstChild("click").MouseButton1Click:Connect(function()
+		if _G.NorameTAble.Opemaze == false then
+			_G.NorameTAble.Opemaze = true
+			wait(1)
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("ImageLabel").Rotation = 180
+		else
+			wait(1)
+			_G.NorameTAble.Opemaze = false
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("ImageLabel").Rotation = 0
+		end	
+	end)
+	if game.Workspace:FindFirstChild("MazeZones")  then
+	local Maze = {}
+	for i ,v in pairs(game.Workspace.MazeZones:GetChildren()) do
+		if v:IsA("Part")	 and v.ClassName == "Part" then
+			table.insert(Maze , v)
+		end
+	end
+
+	for i , v in pairs(Maze) do
+		local clone = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+		clone.Name = v.Name
+		clone.Parent = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+		clone.Visible = true
+		clone.Text = v.Name
+		clone.MouseButton1Click:Connect(function()
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text = clone.Text
+			wait(0.5)
+			_G.NorameTAble.Opemaze = false
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R3:FindFirstChild("AutoMaze"):FindFirstChild("ImageLabel").Rotation = 0
+			_G.SaTAble.cbcRaid = clone.Text
+			saveSetting()
+		end)
+	end
+
+	R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.Laquel.maze == false then
+			wait(0.5)
+			_G.SaTAble.Laquel.maze = true
+			saveSetting()
+			ActiveClcik(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )	
+			spawn(function()
+				while _G.SaTAble.Laquel.maze do
+					local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+					xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
+					wait()
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				print("active")
+				wait()
+				spawn(function()
+					while _G.SaTAble.Laquel.maze do
+						print()
+						if not ch:FindFirstChild("HumanoidRootPart") then
+							print()
+						elseif ch:FindFirstChild("HumanoidRootPart") then
+							local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+							xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
+						end
+						wait()
+					end
+				end)
+			end)
+		else
+
+			wait(0.5)
+			_G.SaTAble.Laquel.maze = false
+			saveSetting()
+			UnActiveClick(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )
+		end	
+		end)
+		end
+	------------------AutoMaze-----------------
+	----------------AutoDungeon-----------------
+	R2:FindFirstChild("AutoDungeon"):FindFirstChild("click").MouseButton1Click:Connect(function()
+		if _G.NorameTAble.OpeDungeon == false then
+			_G.NorameTAble.OpeDungeon = true
+			wait(1)
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("ImageLabel").Rotation = 180
+		else
+			wait(1)
+			_G.NorameTAble.OpeDungeon = false
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("ImageLabel").Rotation = 0
+		end	
+	end)
+	if game.Workspace:FindFirstChild("Dungeons") then
+	local Dungeon = {}
+	for i ,v in pairs(game.Workspace.Dungeons:GetChildren()) do
+		if v:IsA("Part")	 and v.ClassName == "Part" then
+			table.insert(Dungeon , v)
+		end
+	end
+
+	for i , v in pairs(Dungeon) do
+		local clone = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+		clone.Name = v.Name
+		clone.Parent = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+		clone.Visible = true
+		clone.Text = v.Name
+		clone.MouseButton1Click:Connect(function()
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text = clone.Text
+			wait(0.5)
+			_G.NorameTAble.OpeDungeon = false
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R2:FindFirstChild("AutoDungeon"):FindFirstChild("ImageLabel").Rotation = 0
+			_G.SaTAble.cbcRaid = clone.Text
+			saveSetting()
+		end)
+	end
+
+	R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.Laquel.dungeon == false then
+			wait(0.5)
+			_G.SaTAble.Laquel.dungeon = true
+			saveSetting()
+			ActiveClcik(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )	
+			spawn(function()
+				while _G.SaTAble.Laquel.dungeon do
+					local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+					xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
+					wait()
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				print("active")
+				wait()
+				spawn(function()
+					while _G.SaTAble.Laquel.dungeon do
+						print()
+						if not ch:FindFirstChild("HumanoidRootPart") then
+							print()
+						elseif ch:FindFirstChild("HumanoidRootPart") then
+							local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+							xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
+						end
+						wait()
+					end
+				end)
+			end)
+		else
+
+			wait(0.5)
+			_G.SaTAble.Laquel.dungeon = false
+			saveSetting()
+			UnActiveClick(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )
+		end	
+	end)
+	end	
+		----------------AutoDungeon-----------------
+	--------------AutoArena-------------------
+	R4:FindFirstChild("Auto..."):FindFirstChild("click").MouseButton1Click:Connect(function()
+		if _G.NorameTAble.OpeAre == false then
+			_G.NorameTAble.OpeAre = true
+			wait(1)
+			R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,1,0),0.1)
+			R4:FindFirstChild("Auto..."):FindFirstChild("ImageLabel").Rotation = 180
+		else
+			wait(1)
+			_G.NorameTAble.OpeAre = false
+			R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R4:FindFirstChild("Auto..."):FindFirstChild("ImageLabel").Rotation = 0
+		end	
+	end)
+	if game.Workspace:FindFirstChild("ArenaZones")  then
+
+	local Arena = {}
+	for i ,v in pairs(game.Workspace.ArenaZones:GetChildren()) do
+		if v:IsA("Part")	 and v.ClassName == "Part" then
+			table.insert(Arena , v)
+		end
+	end
+
+	for i , v in pairs(Arena) do
+		local clone = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+		clone.Name = v.Name
+		clone.Parent = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+		clone.Visible = true
+		clone.Text = v.Name
+		clone.MouseButton1Click:Connect(function()
+			R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text = clone.Text
+			wait(0.5)
+			_G.NorameTAble.OpeAre = false
+			R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+			R4:FindFirstChild("Auto..."):FindFirstChild("ImageLabel").Rotation = 0
+			_G.SaTAble.cbcRaid = clone.Text
+			saveSetting()
+		end)
+	end
+
+	R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+		if _G.SaTAble.Laquel.arena == false then
+			wait(0.5)
+			_G.SaTAble.Laquel.arena = true
+			saveSetting()
+			ActiveClcik(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )	
+			spawn(function()
+				while _G.SaTAble.Laquel.arena do
+					local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+					xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
+					wait()
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				wait()
+				spawn(function()
+					while _G.SaTAble.Laquel.arena do
+						print()
+						if not ch:FindFirstChild("HumanoidRootPart") then
+							print()
+						elseif ch:FindFirstChild("HumanoidRootPart") then
+							local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+							xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
+						end
+						wait()
+					end
+				end)
+			end)
+		else
+
+			wait(0.5)
+			_G.SaTAble.Laquel.arena = false
+			saveSetting()
+			UnActiveClick(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )
+		end	
+	end)
+	end	
+		--------------AutoArena-------------------
+	----------------Raid--------------
+
+end
+---------------------------------Function-------------------
+local twen 
+local twen2 = false
+local inf = false
+
+
+local function NPCRaid()
+	local dist, thing = math.huge
+	for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+		if v ~= ch then
+			local posi = (ch.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+			if posi < dist then 
+				dist = posi 
+				thing = v 
+			end
+		end
+	end
+	return thing
+end
+
+---------------------------------Function-------------------
+
+---------------------------AutoRaideFarm------------------
+----------------------------------AutoClickIntheRaid-----------------------
+if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["Entities"] and game:GetService("Workspace"):FindFirstChild("Raid") or game:GetService("Workspace"):FindFirstChild("Maze")  then
+	----------------------------------AutoClickIntheRaid-----------------------
+	if game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event then
+		game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event:FireServer()
+	end
+	spawn(function()
+		while true do
+			_G.SaTAble.sea1or2 = RaidScroll.RaidFarm.R3.TextBox.Text
+			wait(1)
+		end
+	end)
+	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick").activordesc.MouseButton1Click:Connect(function()
+		if _G.SaTAble.cbcAutoCkick == false then
+			wait(0.5)
+			_G.SaTAble.cbcAutoCkick = true
+			ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick") )
+			spawn(function()
+				while _G.SaTAble.cbcAutoCkick do 
+					Autoclick("Sword Style" , "MouseButton1"  )
+					Autoclick("Fighting Style" , "MouseButton1"  )		
+					Autoclick("Devil Fruit" , "MouseButton1" )
+					wait(0.2)
+				end
+			end)
+			saveSetting()
+		else
+			wait(0.5)
+			_G.SaTAble.cbcAutoCkick = false
+			saveSetting()
+			UnActiveClick(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick") )
+		end
+
+	end)
+	----------------------------------AutoClickIntheRaid-----------------------	
+	--------------------------------------AutoFarmRaid----------------------
+	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide").activordesc.MouseButton1Click:Connect(function()
+		if _G.SaTAble.cbcAutoRaidFarm == false then
+			wait(0.5)
+			_G.SaTAble.cbcAutoRaidFarm = true
+			game.Workspace.Gravity = 0
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+			ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide") )
+			spawn(function()
+				while _G.SaTAble.cbcAutoRaidFarm do 
+					pcall(function()
+						xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+					end)
+					wait()
+				end
+			end)
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+				wait()
+				xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+				spawn(function()
+					while _G.SaTAble.cbcAutoRaidFarm do
+						if _G.SaTAble.cbcAutoRaidFarm == true then
+							xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+							wait()
+						end
+					end
+				end)
+			end)
+
+			saveSetting()
+		else
+			wait(0.5)
+			_G.SaTAble.cbcAutoRaidFarm = false
+			saveSetting()
+			game.Workspace.Gravity = 196
+			UnActiveClick(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide") )
+		end
+
+	end)
+
+	---------------Hp---------------------
+	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone").activordesc.MouseButton1Click:Connect(function()
+		if _G.SaTAble.cbcsavezone == false then
+			wait(0.5)
+			_G.SaTAble.cbcsavezone = true
+			ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone") )
+			saveSetting()
+		else
+			wait(0.5)
+			_G.SaTAble.cbcsavezone = false
+			saveSetting()
+			UnActiveClick(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone") )
+		end
+	end)
+	---------------Hp---------------------
+	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc.MouseButton1Click:Connect(function()
+		if _G.SaTAble.cbcAutoRestart == false then
+			wait(0.5)
+			_G.SaTAble.cbcAutoRestart = true
+			ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave") )
+			saveSetting()
+			spawn(function()
+				while 	_G.SaTAble.cbcAutoRestart do
+					if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
+						tle:Teleport(8396586868, game.Players.LocalPlayer)	
+					elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 30 then
+						game:GetService("Players")["MySun_Hub"].PlayerGui["Restart Votes"].Yes:FireServer()
+					end
+					wait()
+				end
+			end)
+		else
+			wait(0.5)
+			_G.SaTAble.cbcAutoRestart = false
+			saveSetting()
+			UnActiveClick(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave") )
+		end
+
+	end)
+end
+----------------------------------AutoClickIntheRaid-----------------------
+---------------------------AutoRaideFarm------------------
+------------------------Event!_____________
+-------------------------------------------------------------------------------------------------------
+----------------------------------------------
+-----------------Loading!!----------------------
+--------------
+---
+----
+---
+----
+---
+---
+---
+
+------------
+LoadSetting()
+
+----------Speed
+M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed").Size = UDim2.new(M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed").Size.X.Scale ,_G.SaTAble.valuepedd , M1:FindFirstChild("BarSpeed"):FindFirstChild("ColoreSpeed").Size.Y.Scale , 0)
+if _G.SaTAble.cbcSpeed == true then
+	ActiveClcik(M1:FindFirstChild("Buttonspeed"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonspeed"))
+	if ch then
+		local hum = ch.Humanoid
+		chnagespeed = hum.Changed:Connect(function()
+			hum.WalkSpeed = _G.SaTAble.valuepedd
+			for i , v in pairs(ch:GetChildren()) do
+				if v:IsA("Part") or v:IsA("MeshPart") then
+					v.Anchored = false
+				end
+			end
+		end)
+		hum.WalkSpeed = _G.SaTAble.valuepedd
+		for i , v in pairs(ch:GetChildren()) do
+			if v:IsA("Part") or v:IsA("MeshPart") then
+				v.Anchored = false
+			end
+		end
+	end
+end
+-----------Jumb
+M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb").Size = UDim2.new(M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb").Size.X.Scale ,_G.SaTAble.valueJumb , M1:FindFirstChild("BarJump"):FindFirstChild("ColoreJumb").Size.Y.Scale , 0)
+if _G.SaTAble.cbcJumb == true then
+	ActiveClcik(M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonjump") )	
+	if ch then
+		if ch then
+			local hum = ch.Humanoid
+			chnageJumb = hum.Changed:Connect(function()
+				hum.UseJumpPower = true
+				hum.JumpPower = _G.SaTAble.valueJumb
+				for i , v in pairs(ch:GetChildren()) do
+					if v:IsA("Part") or v:IsA("MeshPart") then
+						v.Anchored = false
+					end
+				end
+			end)
+			hum.JumpPower = _G.SaTAble.valueJumb
+			for i , v in pairs(ch:GetChildren()) do
+				if v:IsA("Part") or v:IsA("MeshPart") then
+					v.Anchored = false
+				end
+			end
+		end
+	end
+end
+-----------AutoDefence
+if _G.SaTAble.cbcDefence == true then
+	ActiveClcik(M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc") ,M4:FindFirstChild("AutoDefence"))
+	Swim = true
+	GoToSwim()
+end
+-------------------------------AutoSkill----------------
+------------------fruit------------
+if _G.SaTAble.SaFruitKey.FruitQ == true then
+	spawn(function()
+		while _G.SaTAble.SaFruitKey.FruitQ do 
+			if _G.SaTAble.SaFruitKey.FruitQ == true then
+				ActiveSkill("Devil Fruit" ,"Q" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaFruitKey.FruitE == true then
+	spawn(function()
+		while _G.SaTAble.SaFruitKey.FruitE do 
+			if _G.SaTAble.SaFruitKey.FruitE == true then
+				ActiveSkill("Devil Fruit" ,"E" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaFruitKey.FruitF == true then
+	spawn(function()
+		while _G.SaTAble.SaFruitKey.FruitF do 
+			if _G.SaTAble.SaFruitKey.FruitF == true then
+				ActiveSkill("Devil Fruit" ,"F" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaFruitKey.FruitR == true then
+	spawn(function()
+		while _G.SaTAble.SaFruitKey.FruitR do 
+			if _G.SaTAble.SaFruitKey.FruitR == true then
+				ActiveSkill("Devil Fruit" ,"R" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaFruitKey.FruitT == true then
+	spawn(function()
+		while _G.SaTAble.SaFruitKey.FruitT do 
+			if _G.SaTAble.SaFruitKey.FruitT == true then
+				ActiveSkill("Devil Fruit" ,"T" , M5:FindFirstChild("FruitUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+------------------fruit------------
+-----------------Melle---------------
+if _G.SaTAble.SaMelleKey.MelleQ == true then
+	spawn(function()
+		while _G.SaTAble.SaMelleKey.MelleQ do 
+			if _G.SaTAble.SaMelleKey.MelleQ == true then
+				ActiveSkill("Fighting Style" ,"Q" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaMelleKey.MelleE == true then
+	spawn(function()
+		while _G.SaTAble.SaMelleKey.MelleE do 
+			if _G.SaTAble.SaMelleKey.MelleE == true then
+				ActiveSkill("Fighting Style" ,"E" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaMelleKey.MelleF == true then
+	spawn(function()
+		while _G.SaTAble.SaMelleKey.MelleF do 
+			if _G.SaTAble.SaMelleKey.MelleF == true then
+				ActiveSkill("Fighting Style" ,"F" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaMelleKey.MelleR == true then
+	spawn(function()
+		while _G.SaTAble.SaMelleKey.MelleR do 
+			if _G.SaTAble.SaMelleKey.MelleR == true then
+				ActiveSkill("Fighting Style" ,"R" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaMelleKey.MelleT == true then
+	spawn(function()
+		while _G.SaTAble.SaMelleKey.MelleT do 
+			if _G.SaTAble.SaMelleKey.MelleT == true then
+				ActiveSkill("Fighting Style" ,"T" , M5:FindFirstChild("MelleUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+-----------------Melle------------------
+------------------Sword--------------
+if _G.SaTAble.SaSwordKey.SwordQ == true then
+	spawn(function()
+		while _G.SaTAble.SaSwordKey.SwordQ do 
+			if _G.SaTAble.SaSwordKey.SwordQ == true then
+				ActiveSkill("Sword Style" ,"Q" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Q"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaSwordKey.SwordE == true then
+	spawn(function()
+		while _G.SaTAble.SaSwordKey.SwordE do 
+			if _G.SaTAble.SaSwordKey.SwordE == true then
+				ActiveSkill("Sword Style" ,"E" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("E"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaSwordKey.SwordF == true then
+	spawn(function()
+		while _G.SaTAble.SaSwordKey.SwordF do 
+			if _G.SaTAble.SaSwordKey.SwordF == true then
+				ActiveSkill("Sword Style" ,"F" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("F"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaSwordKey.SwordR == true then
+	spawn(function()
+		while _G.SaTAble.SaSwordKey.SwordR do 
+			if _G.SaTAble.SaSwordKey.SwordR == true then
+				ActiveSkill("Sword Style" ,"R" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("R"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+if _G.SaTAble.SaSwordKey.SwordT == true then
+	spawn(function()
+		while _G.SaTAble.SaSwordKey.SwordT do 
+			if _G.SaTAble.SaSwordKey.SwordT == true then
+				ActiveSkill("Sword Style" ,"T" , M5:FindFirstChild("SwordUse"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("T"))
+			end
+			wait(1.5)
+		end
+	end)
+end
+-----------------Sword---------------
+--------------------AutoSkill-------------------
+-----------------AutoEquipe--------------------
+
+-----------------AutoEquipe--------------------
+---------------AutofArmLoading----------------------------
+----------------DistenceLoading--------------
+--------------autoclick-------------------Ss
+if  _G.SaTAble.cbcAutoCkick == true then
+	ActiveClcik(A4:FindFirstChild("autoclick"):FindFirstChild("activordesc") ,A4:FindFirstChild("autoclick") )
+	spawn(function()
+		while _G.SaTAble.cbcAutoCkick do 
+			Autoclick("Sword Style" , "MouseButton1"  )
+			Autoclick("Fighting Style" , "MouseButton1"  )		
+			Autoclick("Devil Fruit" , "MouseButton1" )
+			wait()
+		end
+	end)
+end
+----------------MobNameLoading-------------------
+
+
+if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["Entities"] and game:GetService("Workspace"):FindFirstChild("Raid") or game:GetService("Workspace"):FindFirstChild("Maze")  then
+
+	RaidScroll.RaidFarm.R2.DistenceBar.ColoreJfly.Size = UDim2.new(0 ,_G.SaTAble.RaidDiste , 1 , 0)
+	RaidScroll.RaidFarm.R2.HPbar.ColoreJfly.Size = UDim2.new(0 ,_G.SaTAble.RaidHP / 50 , 1 , 0)
+	----------------------------------AutoClickIntheRaid-----------------------
+	if game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event then
+		game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event:FireServer()
+		end
+	---------------------------AutoClickIntheRaid-----------------------	
+	--------------------------------------AutoFarmRaid----------------------
+
+	if _G.SaTAble.cbcAutoRaidFarm == true then
+		wait(0.5)
+		game.Workspace.Gravity = 0
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+		ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("ButtonsAutoRaide") )
+		spawn(function()
+			while _G.SaTAble.cbcAutoRaidFarm do 
+				pcall(function()
+					xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+				end)
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+			spawn(function()
+				while _G.SaTAble.cbcAutoRaidFarm do
+					if _G.SaTAble.cbcAutoRaidFarm == true then
+						xframeraid(NPCRaid().HumanoidRootPart.CFrame , 500)
+						wait()
+					end
+				end
+			end)
+		end)			
+	end
+
+	if _G.SaTAble.cbcAutoRestart == true then
+		wait(0.5)
+		ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave") )
+		saveSetting()
+		while _G.SaTAbe.lcbcAutoRestart do
+			if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
+				if  _G.SaTAbe.sea1or2 == "SecondSea" then
+					tle:Teleport(9432106399, game.Players.LocalPlayer)
+				else	if  _G.SaTAbe.sea1or2 == "FristSea" then
+						tle:Teleport(8396586868, game.Players.LocalPlayer)
+					elseif _G.SaTAbe.sea1or2 == nil then
+						tle:Teleport(8396586868, game.Players.LocalPlayer)
+					end
+				end
+			elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 29 then
+				getNil("Yes", "RemoteEvent"):FireServer()
+			end
+			wait()
+		end
+
+
+
+
+	end
+
+	if _G.SaTAble.cbcsavezone == true then
+		wait(0.5)
+		ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R1"):FindFirstChild("SafeZone") )
+	end
+end
+
+
+P3:FindFirstChild("SetelectTool").statsname.Text = _G.SaTAble.Item
+if _G.SaTAble.cbequipe == true then
+	spawn(function()
+		while 	_G.SaTAble.cbequipe  do
+			if _G.SaTAble.cbequipe  == true then
+				for i , v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v:FindFirstChild("Handle") then
+						---r
+					else
+						if v:IsA("Tool") then
+							if v.Name == P3.SetelectTool.statsname.Text then
+								game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+							end
+						end
+					end
+				end 
+			end
+			wait(0.5)
+		end
+	end)	
+	game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+		ch = char2
+		wait()
+		spawn(function()
+			while 	_G.SaTAble.cbequipe  do
+				if _G.SaTAble.cbequipe  == true then
+					for i , v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+						if v:FindFirstChild("Handle") then
+							---r
+						else
+							if v:IsA("Tool") then
+								if v.Name == P3.SetelectTool.statsname.Text then
+									game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+								end
+							end
+						end
+					end 
+				end
+				wait(0.5)
+			end
+		end)	end)
+end	
+	P3:FindFirstChild("SetelectTool").statsname.Text = _G.SaTAble.Item
+
+
+
+if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
+
+	local function NPC(mob)
+		local dist, thing = math.huge
+		for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+			if v.Name == mob then
+				local posi = (ch.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+				if posi < dist then 
+					dist = posi 
+					thing = v 
+				end
+			end
+		end
+		return thing
+	end
+	local function NPC1(mob)
+		local dist, thing = math.huge
+		for i, v in pairs( game.ReplicatedStorage:GetChildren()) do
+			if v.Name == mob then
+				local posi = (ch.HumanoidRootPart.Position - v.HumanoidRootPart.Position).magnitude
+				if posi < dist then 
+					dist = posi 
+					thing = v 
+				end
+			end
+		end
+		return thing
+	end
+
+
+	A4:FindFirstChild("DistenceBar"):FindFirstChild("colordistence").Size = UDim2.new(0 ,_G.SaTAble.ladis , 1 , 0)
+	----------------DistenceLoading--------------
+	----------------MobNameLoading-------------------
+	A1:FindFirstChild("AutoFarm"):FindFirstChild("statsname").Text = _G.SaTAble.NPC
+	if _G.SaTAble.AutoMob == true then
+		game.Workspace.Gravity = 0
+		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+		local po 
+		local here
+		------------------toutEstDedans..................---------------
+		spawn(function()
+			while _G.SaTAble.AutoMob do
+				if AutoFarmFrame  then
+					local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+					here = game.ReplicatedStorage:FindFirstChild(qui)
+					if here == nil then	
+					elseif here then
+						po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+					end
+					if  here == nil then
+						print("mon = NIL")
+						pcall(function()
+							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+						end)
+					elseif po <= 800 then
+						print(1)
+						pcall(function()
+							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+						end)
+					elseif po >= 500 then
+						if here == nil then	
+						elseif here then
+							xframer(here.HumanoidRootPart.CFrame , 500)
+						end
+					end
+					wait()
+				end
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			print("ac")		
+			spawn(function()
+				while _G.SaTAble.AutoMob do
+					if not  ch:FindFirstChild("HumanoidRootPart") then
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						if AutoFarmFrame  then
+							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+							here = game.ReplicatedStorage:FindFirstChild(qui)
+							if here == nil then	
+							elseif here then
+								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+							end
+							if  here == nil then
+								pcall(function()
+									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+								end)
+							elseif po <= 800 then
+								print(1)
+								pcall(function()
+									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+								end)
+							elseif po >= 500 then
+								if here == nil then	
+								elseif here then
+									xframer(here.HumanoidRootPart.CFrame , 500)
+								end
+							end
+						end
+					end
+					wait()
+				end
+			end)
+		end)
+
+		------------------toutEstDedans..................---------------
+		ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
+	end
+	---------------AutofArmLoading----------------------------
+
+
+	--------------------------------------AutoJoinDungeon---------------------------
+
+	----------------------------LesText-------------------
+	R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text = _G.SaTAble.cbcRaid
+	R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text = _G.SaTAble.cbcRaid
+	R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text = _G.SaTAble.cbcRaid
+	R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text = _G.SaTAble.cbcRaid
+	----------------------------LesText-------------------
+
+	---------------------------LesTelpo------------------------------
+	if 		_G.SaTAble.Laquel.raId == true then
+		ActiveClcik(R1:FindFirstChild("ButtonsAutoRaide"):FindFirstChild("activordesc") ,R1:FindFirstChild("ButtonsAutoRaide") )	
+		spawn(function()
+			while _G.SaTAble.Laquel.raId do
+				local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
+				xframer2(game.Workspace.Zones[ou].CFrame , 500)
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			print("active")
+			wait()
+			spawn(function()
+				while _G.SaTAble.Laquel.raId do
+					print()
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print()
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.Zones[ou].CFrame , 500)
+					end
+					wait()
+				end
+			end)
+		end)
+	end
+	---Dungeon
+	if 		_G.SaTAble.Laquel.dungeon == true then
+		ActiveClcik(	R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )	
+		spawn(function()
+			while _G.SaTAble.Laquel.dungeon do
+				local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+				xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			spawn(function()
+				while _G.SaTAble.Laquel.dungeon do
+					print()
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print()
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
+					end
+					wait()
+				end
+			end)
+		end)
+	end
+	----Maze
+	if 		_G.SaTAble.Laquel.maze == true then	
+		ActiveClcik(	R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )	
+		spawn(function()
+			while _G.SaTAble.Laquel.maze do
+				local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+				xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			spawn(function()
+				while _G.SaTAble.Laquel.maze do
+					print()
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print()
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
+					end
+					wait()
+				end
+			end)
+		end)
+	end
+	----Arena
+	if 		_G.SaTAble.Laquel.arena == true then
+		ActiveClcik(	R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )	
+		spawn(function()
+			while _G.SaTAble.Laquel.arena do
+				local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+				xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
+				wait()
+			end
+		end)
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+			wait()
+			spawn(function()
+				while _G.SaTAble.Laquel.arena do
+					print()
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print()
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
+					end
+					wait()
+				end
+			end)
+		end)
+	end
+	---------------------------LesTelpo------------------------------
+	--------------------------------------AutoJoinDungeon---------------------------
+end
+-----------------Loading!!----------------------
+
+
+-----------------------------------------------
+---------------------------------------------------------------------------------------------------
