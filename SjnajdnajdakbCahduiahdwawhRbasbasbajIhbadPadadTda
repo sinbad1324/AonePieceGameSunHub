@@ -1608,7 +1608,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 							end)
-						elseif po <= 2000 then
+						elseif po <= 300 then
 							pcall(function()
 								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
