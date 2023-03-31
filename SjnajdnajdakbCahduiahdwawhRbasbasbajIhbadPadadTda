@@ -2820,25 +2820,25 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 		end)			
 	end
 
-	if _G.SaTAble.cbcAutoRestart == true then
-		wait(0.5)
-		ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave") )
-		saveSetting()
-		while _G.SaTAbe.cbcAutoRestart do
-			if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
-						tle:Teleport(8396586868, game.Players.LocalPlayer)
+	--if _G.SaTAble.cbcAutoRestart == true then
+	--	wait(0.5)
+	--	ActiveClcik(RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave").activordesc ,RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("AutoLeave") )
+	--	saveSetting()
+	--	while _G.SaTAbe.cbcAutoRestart do
+	--		if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
+	--					tle:Teleport(8396586868, game.Players.LocalPlayer)
 					
 				
-			elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 29 then
-				getNil("Yes", "RemoteEvent"):FireServer()
-			end
-			wait()
-		end
+	--		elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 29 then
+	--			getNil("Yes", "RemoteEvent"):FireServer()
+	--		end
+	--		wait()
+	--	end
 
 
 
 
-	end
+	--end
 
 	if _G.SaTAble.cbcsavezone == true then
 		wait(0.5)
