@@ -1628,11 +1628,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				wait()
 				spawn(function()
 					while _G.SaTAble.AutoMob do
-						pcall(function()
-							game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
-							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-						end)
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							here = game.ReplicatedStorage:FindFirstChild(qui)
@@ -1641,16 +1636,12 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
 							end
 							if  here == nil then
-								print(1)
 								pcall(function()
-									game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
 							elseif po <= 2000 then
-								print(2)
 								pcall(function()
-									game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
