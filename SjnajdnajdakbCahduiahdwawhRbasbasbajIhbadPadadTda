@@ -2828,14 +2828,9 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 		saveSetting()
 		while _G.SaTAbe.lcbcAutoRestart do
 			if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
-				if  _G.SaTAbe.sea1or2 == "SecondSea" then
-					tle:Teleport(9432106399, game.Players.LocalPlayer)
-				else	if  _G.SaTAbe.sea1or2 == "FristSea" then
 						tle:Teleport(8396586868, game.Players.LocalPlayer)
-					elseif _G.SaTAbe.sea1or2 == nil then
-						tle:Teleport(8396586868, game.Players.LocalPlayer)
-					end
-				end
+					
+				
 			elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 29 then
 				getNil("Yes", "RemoteEvent"):FireServer()
 			end
