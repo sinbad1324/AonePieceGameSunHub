@@ -2940,13 +2940,11 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 						po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
 					end
 					if  here == nil then
-						print("mon = NIL")
 						pcall(function()
 							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 						end)
-					elseif po <= 800 then
-						print(1)
+					elseif po <= 300 then
 						pcall(function()
 							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
@@ -2963,43 +2961,38 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		end)
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 			ch = char2
+
 			wait()
-			print("ac")		
 			spawn(function()
 				while _G.SaTAble.AutoMob do
-					if not  ch:FindFirstChild("HumanoidRootPart") then
-					elseif ch:FindFirstChild("HumanoidRootPart") then
-						if AutoFarmFrame  then
-							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-							here = game.ReplicatedStorage:FindFirstChild(qui)
+					if AutoFarmFrame  then
+						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+						here = game.ReplicatedStorage:FindFirstChild(qui)
+						if here == nil then	
+						elseif here then
+							po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+						end
+						if  here == nil then
+							pcall(function()
+								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+							end)
+						elseif po <= 300 then
+							pcall(function()
+								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+							end)
+						elseif po >= 500 then
 							if here == nil then	
 							elseif here then
-								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
-							end
-							if  here == nil then
-								pcall(function()
-									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-								end)
-							elseif po <= 800 then
-								print(1)
-								pcall(function()
-									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-								end)
-							elseif po >= 500 then
-								if here == nil then	
-								elseif here then
-									xframer(here.HumanoidRootPart.CFrame , 500)
-								end
+								xframer(here.HumanoidRootPart.CFrame , 500)
 							end
 						end
+						wait()
 					end
-					wait()
 				end
 			end)
 		end)
-
 		------------------toutEstDedans..................---------------
 		ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
 	end
