@@ -797,6 +797,8 @@ local function xframeraid(npc , tim)
 			twen2 = tw:Create(ch.HumanoidRootPart , inf , {CFrame = npc * CFrame.new(0,300,0) * CFrame.Angles(4.5,0,0)})
 			if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
 				body = Instance.new("BodyVelocity" , ch.HumanoidRootPart)
+				print(1)
+
 				body.Name = "sinbad"
 				body.Velocity = Vector3.new(0,0,0)
 				body.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
@@ -1639,12 +1641,14 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
 							end
 							if  here == nil then
+								print(1)
 								pcall(function()
 									game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
-							elseif po <= 800 then
+							elseif po <= 2000 then
+								print(2)
 								pcall(function()
 									game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
