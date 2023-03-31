@@ -173,7 +173,6 @@ _G.SaTAble = {
 	cbcAutoRaidFarm = false;
 	cbcsavezone = false;
 	cbcAutoRestart = false;
-	sea1or2 = nil;
 	Item = nil
 }
 ---------------------TableSave-----------------------
@@ -1627,6 +1626,11 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				wait()
 				spawn(function()
 					while _G.SaTAble.AutoMob do
+						pcall(function()
+							game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
+							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+						end)
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							here = game.ReplicatedStorage:FindFirstChild(qui)
@@ -1640,7 +1644,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
-							elseif po <= 2000 then
+							elseif po <= 800 then
 								pcall(function()
 									game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,60,0)
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -2418,13 +2422,7 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 	if game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event then
 		game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event:FireServer()
 	end
-	spawn(function()
-		while true do
-			_G.SaTAble.sea1or2 = RaidScroll.RaidFarm.R3.TextBox.Text
-saveSetting()
-			wait(1)
-		end
-	end)
+	
 	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick").activordesc.MouseButton1Click:Connect(function()
 		if _G.SaTAble.cbcAutoCkick == false then
 			wait(0.5)
