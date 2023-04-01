@@ -1624,7 +1624,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				end
 				
 			end)
-			wait(0.5)
+			wait(2)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
 
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
@@ -1632,7 +1632,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				wait()
 				spawn(function()
 					while _G.SaTAble.AutoMob do
-						if AutoFarmFrame  then           
+						if AutoFarmFrame  then    
+							if not ch.HumanoidRootPart then
+							elseif ch.HumanoidRootPart then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							here = game.ReplicatedStorage:FindFirstChild(qui)
 							if here == nil then	
@@ -1659,10 +1661,11 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								end
 							end
 							wait()
-						end
+							end	
+							end
 					end
 				end)
-				wait(0.5)
+				wait(3)
 				game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
 
 			end)
