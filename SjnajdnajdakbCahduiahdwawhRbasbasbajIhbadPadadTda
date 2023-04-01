@@ -1623,9 +1623,11 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					end
 				end
 			end)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
+
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
-				
+
 				wait()
 				spawn(function()
 					while _G.SaTAble.AutoMob do
@@ -1657,7 +1659,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					end
 				end)
 			end)
-			ch.HumanoidRootPart.Rotation = Vector3.new(-90,0,0)
+
 			------------------toutEstDedans..................---------------
 			ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
 			saveSetting()
@@ -2023,7 +2025,7 @@ P3:FindFirstChild("buttonEquipe"):FindFirstChild("activordesc").MouseButton1Clic
 						else
 							if v:IsA("Tool") then
 								if v.Name == P3.SetelectTool.statsname.Text then
-		                         if v then
+									if v then
 										game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
 									end
 								end
@@ -2164,69 +2166,69 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		end	
 	end)
 	if game.Workspace:FindFirstChild("MazeZones")  then
-	local Maze = {}
-	for i ,v in pairs(game.Workspace.MazeZones:GetChildren()) do
-		if v:IsA("Part")	 and v.ClassName == "Part" then
-			table.insert(Maze , v)
+		local Maze = {}
+		for i ,v in pairs(game.Workspace.MazeZones:GetChildren()) do
+			if v:IsA("Part")	 and v.ClassName == "Part" then
+				table.insert(Maze , v)
+			end
 		end
-	end
 
-	for i , v in pairs(Maze) do
-		local clone = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
-		clone.Name = v.Name
-		clone.Parent = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
-		clone.Visible = true
-		clone.Text = v.Name
-		clone.MouseButton1Click:Connect(function()
-			R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text = clone.Text
-			wait(0.5)
-			_G.NorameTAble.Opemaze = false
-			R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
-			R3:FindFirstChild("AutoMaze"):FindFirstChild("ImageLabel").Rotation = 0
-			_G.SaTAble.cbcRaid = clone.Text
-			saveSetting()
-		end)
-	end
-
-	R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
-		if _G.SaTAble.Laquel.maze == false then
-			wait(0.5)
-			_G.SaTAble.Laquel.maze = true
-			saveSetting()
-			ActiveClcik(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )	
-			spawn(function()
-				while _G.SaTAble.Laquel.maze do
-					local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
-					xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
-					wait()
-				end
+		for i , v in pairs(Maze) do
+			local clone = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+			clone.Name = v.Name
+			clone.Parent = R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+			clone.Visible = true
+			clone.Text = v.Name
+			clone.MouseButton1Click:Connect(function()
+				R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text = clone.Text
+				wait(0.5)
+				_G.NorameTAble.Opemaze = false
+				R3:FindFirstChild("AutoMaze"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+				R3:FindFirstChild("AutoMaze"):FindFirstChild("ImageLabel").Rotation = 0
+				_G.SaTAble.cbcRaid = clone.Text
+				saveSetting()
 			end)
-			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
-				ch = char2
-				print("active")
-				wait()
+		end
+
+		R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+			if _G.SaTAble.Laquel.maze == false then
+				wait(0.5)
+				_G.SaTAble.Laquel.maze = true
+				saveSetting()
+				ActiveClcik(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )	
 				spawn(function()
 					while _G.SaTAble.Laquel.maze do
-						print()
-						if not ch:FindFirstChild("HumanoidRootPart") then
-							print()
-						elseif ch:FindFirstChild("HumanoidRootPart") then
-							local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
-							xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
-						end
+						local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
 						wait()
 					end
 				end)
-			end)
-		else
+				game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+					ch = char2
+					print("active")
+					wait()
+					spawn(function()
+						while _G.SaTAble.Laquel.maze do
+							print()
+							if not ch:FindFirstChild("HumanoidRootPart") then
+								print()
+							elseif ch:FindFirstChild("HumanoidRootPart") then
+								local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
+								xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
+							end
+							wait()
+						end
+					end)
+				end)
+			else
 
-			wait(0.5)
-			_G.SaTAble.Laquel.maze = false
-			saveSetting()
-			UnActiveClick(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )
-		end	
+				wait(0.5)
+				_G.SaTAble.Laquel.maze = false
+				saveSetting()
+				UnActiveClick(R3:FindFirstChild("ButtonsAutoMaze"):FindFirstChild("activordesc") ,R3:FindFirstChild("ButtonsAutoMaze") )
+			end	
 		end)
-		end
+	end
 	------------------AutoMaze-----------------
 	----------------AutoDungeon-----------------
 	R2:FindFirstChild("AutoDungeon"):FindFirstChild("click").MouseButton1Click:Connect(function()
@@ -2243,70 +2245,70 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		end	
 	end)
 	if game.Workspace:FindFirstChild("Dungeons") then
-	local Dungeon = {}
-	for i ,v in pairs(game.Workspace.Dungeons:GetChildren()) do
-		if v:IsA("Part")	 and v.ClassName == "Part" then
-			table.insert(Dungeon , v)
+		local Dungeon = {}
+		for i ,v in pairs(game.Workspace.Dungeons:GetChildren()) do
+			if v:IsA("Part")	 and v.ClassName == "Part" then
+				table.insert(Dungeon , v)
+			end
 		end
-	end
 
-	for i , v in pairs(Dungeon) do
-		local clone = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
-		clone.Name = v.Name
-		clone.Parent = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
-		clone.Visible = true
-		clone.Text = v.Name
-		clone.MouseButton1Click:Connect(function()
-			R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text = clone.Text
-			wait(0.5)
-			_G.NorameTAble.OpeDungeon = false
-			R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
-			R2:FindFirstChild("AutoDungeon"):FindFirstChild("ImageLabel").Rotation = 0
-			_G.SaTAble.cbcRaid = clone.Text
-			saveSetting()
-		end)
-	end
-
-	R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
-		if _G.SaTAble.Laquel.dungeon == false then
-			wait(0.5)
-			_G.SaTAble.Laquel.dungeon = true
-			saveSetting()
-			ActiveClcik(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )	
-			spawn(function()
-				while _G.SaTAble.Laquel.dungeon do
-					local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
-					xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
-					wait()
-				end
+		for i , v in pairs(Dungeon) do
+			local clone = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+			clone.Name = v.Name
+			clone.Parent = R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+			clone.Visible = true
+			clone.Text = v.Name
+			clone.MouseButton1Click:Connect(function()
+				R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text = clone.Text
+				wait(0.5)
+				_G.NorameTAble.OpeDungeon = false
+				R2:FindFirstChild("AutoDungeon"):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+				R2:FindFirstChild("AutoDungeon"):FindFirstChild("ImageLabel").Rotation = 0
+				_G.SaTAble.cbcRaid = clone.Text
+				saveSetting()
 			end)
-			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
-				ch = char2
-				print("active")
-				wait()
+		end
+
+		R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+			if _G.SaTAble.Laquel.dungeon == false then
+				wait(0.5)
+				_G.SaTAble.Laquel.dungeon = true
+				saveSetting()
+				ActiveClcik(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )	
 				spawn(function()
 					while _G.SaTAble.Laquel.dungeon do
-						print()
-						if not ch:FindFirstChild("HumanoidRootPart") then
-							print()
-						elseif ch:FindFirstChild("HumanoidRootPart") then
-							local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
-							xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
-						end
+						local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
 						wait()
 					end
 				end)
-			end)
-		else
+				game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+					ch = char2
+					print("active")
+					wait()
+					spawn(function()
+						while _G.SaTAble.Laquel.dungeon do
+							print()
+							if not ch:FindFirstChild("HumanoidRootPart") then
+								print()
+							elseif ch:FindFirstChild("HumanoidRootPart") then
+								local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
+								xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
+							end
+							wait()
+						end
+					end)
+				end)
+			else
 
-			wait(0.5)
-			_G.SaTAble.Laquel.dungeon = false
-			saveSetting()
-			UnActiveClick(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )
-		end	
-	end)
+				wait(0.5)
+				_G.SaTAble.Laquel.dungeon = false
+				saveSetting()
+				UnActiveClick(R2:FindFirstChild("ButtonsAutoDungeon"):FindFirstChild("activordesc") ,R2:FindFirstChild("ButtonsAutoDungeon") )
+			end	
+		end)
 	end	
-		----------------AutoDungeon-----------------
+	----------------AutoDungeon-----------------
 	--------------AutoArena-------------------
 	R4:FindFirstChild("Auto..."):FindFirstChild("click").MouseButton1Click:Connect(function()
 		if _G.NorameTAble.OpeAre == false then
@@ -2323,69 +2325,69 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 	end)
 	if game.Workspace:FindFirstChild("ArenaZones")  then
 
-	local Arena = {}
-	for i ,v in pairs(game.Workspace.ArenaZones:GetChildren()) do
-		if v:IsA("Part")	 and v.ClassName == "Part" then
-			table.insert(Arena , v)
+		local Arena = {}
+		for i ,v in pairs(game.Workspace.ArenaZones:GetChildren()) do
+			if v:IsA("Part")	 and v.ClassName == "Part" then
+				table.insert(Arena , v)
+			end
 		end
-	end
 
-	for i , v in pairs(Arena) do
-		local clone = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
-		clone.Name = v.Name
-		clone.Parent = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
-		clone.Visible = true
-		clone.Text = v.Name
-		clone.MouseButton1Click:Connect(function()
-			R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text = clone.Text
-			wait(0.5)
-			_G.NorameTAble.OpeAre = false
-			R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
-			R4:FindFirstChild("Auto..."):FindFirstChild("ImageLabel").Rotation = 0
-			_G.SaTAble.cbcRaid = clone.Text
-			saveSetting()
-		end)
-	end
-
-	R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
-		if _G.SaTAble.Laquel.arena == false then
-			wait(0.5)
-			_G.SaTAble.Laquel.arena = true
-			saveSetting()
-			ActiveClcik(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )	
-			spawn(function()
-				while _G.SaTAble.Laquel.arena do
-					local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
-					xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
-					wait()
-				end
+		for i , v in pairs(Arena) do
+			local clone = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland"):FindFirstChild("Quel"):Clone()
+			clone.Name = v.Name
+			clone.Parent = R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):FindFirstChild("Listeisland")
+			clone.Visible = true
+			clone.Text = v.Name
+			clone.MouseButton1Click:Connect(function()
+				R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text = clone.Text
+				wait(0.5)
+				_G.NorameTAble.OpeAre = false
+				R4:FindFirstChild("Auto..."):FindFirstChild("liste"):FindFirstChild("ScrollingFrame"):TweenSize(UDim2.new(1.091,0,0,0),0.1)	
+				R4:FindFirstChild("Auto..."):FindFirstChild("ImageLabel").Rotation = 0
+				_G.SaTAble.cbcRaid = clone.Text
+				saveSetting()
 			end)
-			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
-				ch = char2
-				wait()
+		end
+
+		R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
+			if _G.SaTAble.Laquel.arena == false then
+				wait(0.5)
+				_G.SaTAble.Laquel.arena = true
+				saveSetting()
+				ActiveClcik(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )	
 				spawn(function()
 					while _G.SaTAble.Laquel.arena do
-						print()
-						if not ch:FindFirstChild("HumanoidRootPart") then
-							print()
-						elseif ch:FindFirstChild("HumanoidRootPart") then
-							local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
-							xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
-						end
+						local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+						xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
 						wait()
 					end
 				end)
-			end)
-		else
+				game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+					ch = char2
+					wait()
+					spawn(function()
+						while _G.SaTAble.Laquel.arena do
+							print()
+							if not ch:FindFirstChild("HumanoidRootPart") then
+								print()
+							elseif ch:FindFirstChild("HumanoidRootPart") then
+								local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
+								xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
+							end
+							wait()
+						end
+					end)
+				end)
+			else
 
-			wait(0.5)
-			_G.SaTAble.Laquel.arena = false
-			saveSetting()
-			UnActiveClick(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )
-		end	
-	end)
+				wait(0.5)
+				_G.SaTAble.Laquel.arena = false
+				saveSetting()
+				UnActiveClick(R4:FindFirstChild("ButtonsAuto...."):FindFirstChild("activordesc") ,R4:FindFirstChild("ButtonsAuto....") )
+			end	
+		end)
 	end	
-		--------------AutoArena-------------------
+	--------------AutoArena-------------------
 	----------------Raid--------------
 
 end
@@ -2418,7 +2420,7 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 	if game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event then
 		game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event:FireServer()
 	end
-	
+
 	RaidScroll:FindFirstChild("RaidFarm"):FindFirstChild("R3"):FindFirstChild("ButtonsAutoClick").activordesc.MouseButton1Click:Connect(function()
 		if _G.SaTAble.cbcAutoCkick == false then
 			wait(0.5)
@@ -2459,8 +2461,6 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 					wait()
 				end
 			end)
-			wait(0.5)
-			ch.HumanoidRootPart.Rotation = Vector3.new(-90,0,0)
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
 				wait()
@@ -2473,9 +2473,8 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 						end
 					end
 				end)
-				wait(0.5)
-				ch.HumanoidRootPart.Rotation = Vector3.new(-90,0,0)
 			end)
+
 			saveSetting()
 		else
 			wait(0.5)
@@ -2783,10 +2782,10 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 	----------------------------------AutoClickIntheRaid-----------------------
 	if game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event then
 		game:GetService("Players").LocalPlayer.PlayerGui["Start Votes"].Event:FireServer()
-		end
+	end
 	---------------------------AutoClickIntheRaid-----------------------	
 	--------------------------------------AutoFarmRaid---------------------
-	
+
 	RaidScroll.RaidFarm.R3.TextBox.Text = _G.SaTAble.sea1or2 
 
 
@@ -2828,7 +2827,7 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 				if game:GetService("ReplicatedStorage"):WaitForChild(game:GetService("Players").LocalPlayer.Name .. "Life Counter").Value <= 0 then
 					tle:Teleport(8396586868, game.Players.LocalPlayer)	
 				elseif game:GetService("ReplicatedStorage").WaveCounter.Value >= 29 then
-								getNil("Yes", "RemoteEvent"):FireServer()
+					getNil("Yes", "RemoteEvent"):FireServer()
 				end
 				wait()
 			end
@@ -2886,7 +2885,7 @@ if _G.SaTAble.cbequipe == true then
 			end
 		end)	end)
 end	
-	P3:FindFirstChild("SetelectTool").statsname.Text = _G.SaTAble.Item
+P3:FindFirstChild("SetelectTool").statsname.Text = _G.SaTAble.Item
 
 
 
