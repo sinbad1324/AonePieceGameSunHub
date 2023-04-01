@@ -1593,6 +1593,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
 			local po 
 			local here
+			game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
 			------------------toutEstDedans..................---------------
 			spawn(function()
 				while _G.SaTAble.AutoMob do
@@ -1623,8 +1624,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					end
 				end
 			end)
-			game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
-
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
 
