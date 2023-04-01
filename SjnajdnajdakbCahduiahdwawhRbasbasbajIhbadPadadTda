@@ -725,7 +725,6 @@ local function xframer(npc , tim)
 	local	ch = game.Players.LocalPlayer.Character
 	if not npc then
 	elseif npc then
-		ch["Character Tilting"].Enabled = false
 		inf = TweenInfo.new(((ch.HumanoidRootPart.Position - npc.Position).Magnitude) / tim)
 		twen = tw:Create(ch.HumanoidRootPart , inf , {CFrame = npc * CFrame.new(0,_G.SaTAble.ladis,0)})
 		if not ch.HumanoidRootPart:FindFirstChild("sinbad") then
@@ -1597,7 +1596,8 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			------------------toutEstDedans..................---------------
 			spawn(function()
 				while _G.SaTAble.AutoMob do
-					if AutoFarmFrame  then
+					ch["Character Tilting"].Enabled = false
+					if AutoFarmFrame  then           
 						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 						here = game.ReplicatedStorage:FindFirstChild(qui)
 						if here == nil then	
@@ -1626,11 +1626,12 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			end)
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
-
+print("act")
 				wait()
 				spawn(function()
 					while _G.SaTAble.AutoMob do
-						if AutoFarmFrame  then
+						ch["Character Tilting"].Enabled = false
+						if AutoFarmFrame  then           
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							here = game.ReplicatedStorage:FindFirstChild(qui)
 							if here == nil then	
