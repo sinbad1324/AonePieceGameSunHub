@@ -1629,12 +1629,13 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					end
 				end
 			end)
-			wait(3)
+			wait(4)
 			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
-			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
+			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
+			print(hrp.Rotation ,hrp.Orientation )
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
-				wait(2)
+				wait(1)
 				spawn(function()
 					while _G.SaTAble.AutoMob do
 						wait()
@@ -1668,8 +1669,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 						end
 					end
 				end)
-				
-				wait(3)
+				wait(4)
 				hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
 				hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			end)
@@ -2476,6 +2476,9 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 					wait()
 				end
 			end)
+			wait(4)
+			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
 				wait()
@@ -2488,6 +2491,9 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 						end
 					end
 				end)
+				wait(4)
+				hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+				hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			end)
 
 			saveSetting()
@@ -2818,6 +2824,9 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 				wait()
 			end
 		end)
+		wait(4)
+		hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 			ch = char2
 			wait()
@@ -2830,6 +2839,9 @@ if game.Workspace:FindFirstChild("Raid Map") and  game:GetService("Workspace")["
 					end
 				end
 			end)
+			wait(4)
+			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		end)			
 	end
 
@@ -2978,7 +2990,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				end
 			end
 		end)
-		wait(3)
+		wait(4)
 		hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
 		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
@@ -3018,7 +3030,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				end
 			end)
 
-			wait(3)
+			wait(4)
 			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
 			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		end)
@@ -3154,4 +3166,3 @@ end
 
 -----------------------------------------------
 ---------------------------------------------------------------------------------------------------
------------
