@@ -2991,9 +2991,9 @@ print("ac")
 			spawn(function()
 				while _G.SaTAble.AutoMob do
 					wait()
-					if  not hrp then
+					if  not ch:FindFirstChild("HumanoidRootPart") then
 						print("rien")
-					elseif hrp then
+					elseif ch:FindFirstChild("HumanoidRootPart") then
 						print(1)
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
