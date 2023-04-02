@@ -1598,10 +1598,10 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			------------------toutEstDedans..................---------------
 			spawn(function()
 				while _G.SaTAble.AutoMob do
-					if hrp == nil or not hrp then
-					elseif hrp then
-						print("oui")
-
+					if not ch:FindFirstChild("HumanoidRootPart") then
+						print("notHrp")
+					elseif ch:FindFirstChild("HumanoidRootPart") then
+						print("hrp")
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1616,6 +1616,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
 							elseif po <= 300 then
+								print(300)
 								pcall(function()
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
@@ -1636,14 +1637,14 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
-
-				wait()
+                      print("act")
+				wait(2)
 				spawn(function()
 					while _G.SaTAble.AutoMob do
-						wait()
-						if  not hrp then
-						elseif hrp then
-							print("oui")
+						if not ch:FindFirstChild("HumanoidRootPart") then
+							print("notHrp")
+						elseif ch:FindFirstChild("HumanoidRootPart") then
+							print("hrp")
 							ch["Character Tilting"].Enabled = false
 							if AutoFarmFrame  then
 								local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1658,6 +1659,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 									end)
 								elseif po <= 300 then
+									print(300)
 									pcall(function()
 										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
@@ -1668,6 +1670,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 										xframer(here.HumanoidRootPart.CFrame , 500)
 									end
 								end
+								wait()
 							end
 						end
 					end
@@ -1687,6 +1690,8 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					a.CanCollide = true
 				end
 			end
+			hrp.Orientation = Vector3.new(- 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+			hrp.Rotation = Vector3.new(  - 90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 			UnActiveClick(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
 			_G.SaTAble.AutoMob = false
 			saveSetting()
