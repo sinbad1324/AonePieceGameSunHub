@@ -833,7 +833,7 @@ end
 ---------------ButtonSpeed--------------------
 M1:FindFirstChild("Buttonspeed"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
 	if _G.SaTAble.cbcSpeed == false then
-		print()
+		 
 		if ch then
 			local hum = ch.Humanoid
 			chnagespeed = hum.Changed:Connect(function()
@@ -872,7 +872,7 @@ M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc").MouseButton1Click:
 		ActiveClcik(M1:FindFirstChild("Buttonjump"):FindFirstChild("activordesc") ,M1:FindFirstChild("Buttonjump") )
 		_G.SaTAble.cbcJumb = true
 	else
-		print()
+		 
 		chnageJumb:Disconnect()
 		local hum = ch.Humanoid
 		hum.JumpPower = 50  
@@ -887,7 +887,7 @@ end)
 --M2
 M2:FindFirstChild("Buttonfly"):FindFirstChild("activordesc").MouseButton1Click:Connect(function()
 	if _G.NorameTAble.cbcFly == false then
-		print()
+		 
 		fly()
 		ActiveClcik(M2:FindFirstChild("Buttonfly"):FindFirstChild("activordesc") ,M2:FindFirstChild("Buttonfly") )
 		_G.NorameTAble.cbcFly = true
@@ -938,7 +938,7 @@ M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc").MouseButton1Click
 		_G.SaTAble.cbcDefence = true
 		saveSetting()
 	else
-		print()
+		 
 		Swim = false
 		UnActiveClick(M4:FindFirstChild("AutoDefence"):FindFirstChild("activordesc") ,M4:FindFirstChild("AutoDefence"))
 		_G.SaTAble.cbcDefence = false
@@ -1928,12 +1928,12 @@ P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc").MouseButton1Click
 		ActiveClcik(P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc") ,P2:FindFirstChild("WhoButtonTP") )
 		spawn(function()
 			while _G.NorameTAble.cbctptpplayer  do
-				print()
+				 
 				if not ch:FindFirstChild("HumanoidRootPart") then
 				elseif ch:FindFirstChild("HumanoidRootPart") then
 					local name = P2:FindFirstChild("PlayerToLook").statsname.Text
 					xframer2(game.Players[name].Character:FindFirstChild("HumanoidRootPart").CFrame , 500)
-					print()
+					 
 				end
 				wait()
 			end
@@ -1943,9 +1943,9 @@ P2:FindFirstChild("WhoButtonTP"):FindFirstChild("activordesc").MouseButton1Click
 			wait()
 			spawn(function()
 				while _G.NorameTAble.cbctptpplayer  do
-					print()
+					 
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print()
+						 
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						local name = P2:FindFirstChild("PlayerToLook").statsname.Text
 						xframer2(game.Players[name].Character:FindFirstChild("HumanoidRootPart").CFrame , 500)
@@ -2148,9 +2148,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				wait()
 				spawn(function()
 					while _G.SaTAble.Laquel.raId do
-						print()
+						 
 						if not ch:FindFirstChild("HumanoidRootPart") then
-							print()
+							 
 						elseif ch:FindFirstChild("HumanoidRootPart") then
 							local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
 							xframer2(game.Workspace.Zones[ou].CFrame , 500)
@@ -2225,9 +2225,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					wait()
 					spawn(function()
 						while _G.SaTAble.Laquel.maze do
-							print()
+							 
 							if not ch:FindFirstChild("HumanoidRootPart") then
-								print()
+								 
 							elseif ch:FindFirstChild("HumanoidRootPart") then
 								local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
 								xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
@@ -2304,9 +2304,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					wait()
 					spawn(function()
 						while _G.SaTAble.Laquel.dungeon do
-							print()
+							 
 							if not ch:FindFirstChild("HumanoidRootPart") then
-								print()
+								 
 							elseif ch:FindFirstChild("HumanoidRootPart") then
 								local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
 								xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
@@ -2383,9 +2383,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					wait()
 					spawn(function()
 						while _G.SaTAble.Laquel.arena do
-							print()
+							 
 							if not ch:FindFirstChild("HumanoidRootPart") then
-								print()
+								 
 							elseif ch:FindFirstChild("HumanoidRootPart") then
 								local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
 								xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
@@ -2951,7 +2951,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				if  not hrp then
 					print(0)
 				elseif hrp then
-					print(1)
+					print("Hrp")
 					ch["Character Tilting"].Enabled = false
 					if AutoFarmFrame  then
 						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -2986,8 +2986,8 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 			ch = char2
-
-			wait()
+print("ac")
+			wait(2)
 			spawn(function()
 				while _G.SaTAble.AutoMob do
 					wait()
@@ -3058,9 +3058,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			wait()
 			spawn(function()
 				while _G.SaTAble.Laquel.raId do
-					print()
+					 
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print()
+						 
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						local ou = R1:FindFirstChild("AutoRaid"):FindFirstChild("statsname").Text
 						xframer2(game.Workspace.Zones[ou].CFrame , 500)
@@ -3085,9 +3085,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			wait()
 			spawn(function()
 				while _G.SaTAble.Laquel.dungeon do
-					print()
+					 
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print()
+						 
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						local ou = R2:FindFirstChild("AutoDungeon"):FindFirstChild("statsname").Text
 						xframer2(game.Workspace.Dungeons[ou].CFrame , 500)
@@ -3112,9 +3112,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			wait()
 			spawn(function()
 				while _G.SaTAble.Laquel.maze do
-					print()
+					 
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print()
+						 
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						local ou = R3:FindFirstChild("AutoMaze"):FindFirstChild("statsname").Text
 						xframer2(game.Workspace.MazeZones[ou].CFrame , 500)
@@ -3139,9 +3139,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			wait()
 			spawn(function()
 				while _G.SaTAble.Laquel.arena do
-					print()
+					 
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print()
+						 
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						local ou = R4:FindFirstChild("Auto..."):FindFirstChild("statsname").Text
 						xframer2(game.Workspace.ArenaZones[ou].CFrame , 500)
