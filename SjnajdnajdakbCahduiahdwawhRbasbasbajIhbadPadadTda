@@ -554,7 +554,7 @@ local function ActiveSkill(S1,S2,F1)
 	local args = {
 		[1] = S1,
 		[2] = S2,
-		[3] = CFrame.new(hrp.CFrame.X - 10 , hrp.CFrame.Y , hrp.CFrame.Z) * CFrame.Angles(hrp.CFrame.X, hrp.CFrame.Y, hrp.CFrame.Z),
+		[3] = CFrame.new(hrp.CFrame.X  , hrp.CFrame.Y , hrp.CFrame.Z) * CFrame.Angles(hrp.CFrame.X, hrp.CFrame.Y, hrp.CFrame.Z),
 		[4] = ch.HumanoidRootPart,
 		[5] = 5
 	}
