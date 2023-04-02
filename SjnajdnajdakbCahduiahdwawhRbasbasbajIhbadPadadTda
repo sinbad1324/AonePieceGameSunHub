@@ -8,6 +8,8 @@ local uis = game:GetService("UserInputService")
 local tw = game:GetService("TweenService")
 local tle = game:GetService("TeleportService")
 local cam = workspace.CurrentCamera
+local hrp = ch.HumanoidRootPart
+
 ----humanoidChange-------
 local chnagespeed
 local chnageJumb 
@@ -552,7 +554,7 @@ local function ActiveSkill(S1,S2,F1)
 	local args = {
 		[1] = S1,
 		[2] = S2,
-		[3] = CFrame.new(0,0,0) * CFrame.Angles(0,0,0),
+		[3] = CFrame.new(hrp.CFrame.X, hrp.CFrame.Y - 10, hrp.CFrame.Z) * CFrame.Angles(hrp.CFrame.X, hrp.CFrame.Y, hrp.CFrame.Z),
 		[4] = ch.HumanoidRootPart,
 		[5] = 5
 	}
@@ -1595,46 +1597,10 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			------------------toutEstDedans..................---------------
 			spawn(function()
 				while _G.SaTAble.AutoMob do
-					ch["Character Tilting"].Enabled = false
-					if AutoFarmFrame  then           
-						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-						here = game.ReplicatedStorage:FindFirstChild(qui)
-						if here == nil then	
-						elseif here then
-							po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
-						end
-						if  here == nil then
-							pcall(function()
-								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-							end)
-						elseif po <= 300 then
-							pcall(function()
-								local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-								xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-							end)
-						elseif po >= 500 then
-							if here == nil then	
-							elseif here then
-								xframer(here.HumanoidRootPart.CFrame , 500)
-							end
-						end
-						wait()
-					end
-				end
-				
-			end)
-			wait(2)
-			game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
-
-			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
-				ch = char2
-				wait()
-				spawn(function()
-					while _G.SaTAble.AutoMob do
-						if AutoFarmFrame  then    
-							if not ch.HumanoidRootPart then
-							elseif ch.HumanoidRootPart then
+					if hrp == nil or not hrp then
+					elseif hrp then
+						ch["Character Tilting"].Enabled = false
+						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 							here = game.ReplicatedStorage:FindFirstChild(qui)
 							if here == nil then	
@@ -1642,32 +1608,69 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
 							end
 							if  here == nil then
-								ch["Character Tilting"].Enabled = false
 								pcall(function()
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
 							elseif po <= 300 then
 								pcall(function()
-									ch["Character Tilting"].Enabled = false
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
 							elseif po >= 500 then
 								if here == nil then	
 								elseif here then
-									ch["Character Tilting"].Enabled = false
 									xframer(here.HumanoidRootPart.CFrame , 500)
 								end
 							end
 							wait()
-							end	
+						end
+					end
+				end
+			end)
+			wait(3)
+			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
+			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+				ch = char2
+
+				wait()
+				spawn(function()
+					while _G.SaTAble.AutoMob do
+						wait()
+						if hrp == nil or not hrp then
+						elseif hrp then
+							ch["Character Tilting"].Enabled = false
+							if AutoFarmFrame  then
+								local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+								here = game.ReplicatedStorage:FindFirstChild(qui)
+								if here == nil then	
+								elseif here then
+									po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+								end
+								if  here == nil then
+									pcall(function()
+										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+									end)
+								elseif po <= 300 then
+									pcall(function()
+										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+									end)
+								elseif po >= 500 then
+									if here == nil then	
+									elseif here then
+										xframer(here.HumanoidRootPart.CFrame , 500)
+									end
+								end
 							end
+						end
 					end
 				end)
-				wait(3)
-				game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Vector3.new(90,0,0)
-
+				wait(5)
+				hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+				hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			end)
 
 			------------------toutEstDedans..................---------------
@@ -2942,39 +2945,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		------------------toutEstDedans..................---------------
 		spawn(function()
 			while _G.SaTAble.AutoMob do
-				if AutoFarmFrame  then
-					local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-					here = game.ReplicatedStorage:FindFirstChild(qui)
-					if here == nil then	
-					elseif here then
-						po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
-					end
-					if  here == nil then
-						pcall(function()
-							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-						end)
-					elseif po <= 300 then
-						pcall(function()
-							local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
-							xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
-						end)
-					elseif po >= 500 then
-						if here == nil then	
-						elseif here then
-							xframer(here.HumanoidRootPart.CFrame , 500)
-						end
-					end
-					wait()
-				end
-			end
-		end)
-		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
-			ch = char2
-
-			wait()
-			spawn(function()
-				while _G.SaTAble.AutoMob do
+				if hrp == nil or not hrp then
+				elseif hrp then
+					ch["Character Tilting"].Enabled = false
 					if AutoFarmFrame  then
 						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 						here = game.ReplicatedStorage:FindFirstChild(qui)
@@ -3001,7 +2974,51 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 						wait()
 					end
 				end
+			end
+		end)
+		wait(3)
+		hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
+		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
+			ch = char2
+
+			wait()
+			spawn(function()
+				while _G.SaTAble.AutoMob do
+					wait()
+					if hrp == nil or not hrp then
+					elseif hrp then
+						ch["Character Tilting"].Enabled = false
+						if AutoFarmFrame  then
+							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+							here = game.ReplicatedStorage:FindFirstChild(qui)
+							if here == nil then	
+							elseif here then
+								po = (ch.HumanoidRootPart.Position - here:FindFirstChild("HumanoidRootPart").Position).magnitude
+							end
+							if  here == nil then
+								pcall(function()
+									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+								end)
+							elseif po <= 300 then
+								pcall(function()
+									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
+									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
+								end)
+							elseif po >= 500 then
+								if here == nil then	
+								elseif here then
+									xframer(here.HumanoidRootPart.CFrame , 500)
+								end
+							end
+						end
+					end
+				end
 			end)
+			wait(5)
+			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
+			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		end)
 		------------------toutEstDedans..................---------------
 		ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
