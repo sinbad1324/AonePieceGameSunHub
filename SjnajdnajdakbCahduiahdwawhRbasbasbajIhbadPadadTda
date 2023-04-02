@@ -1600,9 +1600,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				while _G.SaTAble.AutoMob do
 					wait()
 					if not ch:FindFirstChild("HumanoidRootPart") then
-						print("notHrp")
 					elseif ch:FindFirstChild("HumanoidRootPart") then
-						print("hrp")
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1617,7 +1615,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 								end)
 							elseif po <= 300 then
-								print(300)
 								pcall(function()
 									local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 									xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
@@ -1625,7 +1622,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 							elseif po >= 500 then
 								if here == nil then	
 								elseif here then
-									xframer(here.HumanoidRootPart.CFrame , 500)
+									xframer(here.HumanoidRootPart.CFrame , 600)
 								end
 							end
 						end
@@ -1637,15 +1634,12 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
-                      print("act")
 				wait(2)
 				spawn(function()
 					while _G.SaTAble.AutoMob do
 						wait()
 						if not ch:FindFirstChild("HumanoidRootPart") then
-							print("notHrp")
 						elseif ch:FindFirstChild("HumanoidRootPart") then
-							print("hrp")
 							ch["Character Tilting"].Enabled = false
 							if AutoFarmFrame  then
 								local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1660,7 +1654,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
 									end)
 								elseif po <= 300 then
-									print(300)
 									pcall(function()
 										local toi = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
 										xframer(NPC(toi).HumanoidRootPart.CFrame , 500)
@@ -1668,14 +1661,15 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 								elseif po >= 500 then
 									if here == nil then	
 									elseif here then
-										xframer(here.HumanoidRootPart.CFrame , 500)
+										xframer(here.HumanoidRootPart.CFrame , 600)
 									end
 								end
 							end
 						end
 					end
 				end)
-				wait(5)
+				
+				wait(3)
 				hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
 				hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			end)
@@ -2953,8 +2947,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		------------------toutEstDedans..................---------------
 		spawn(function()
 			while _G.SaTAble.AutoMob do
-				if  not hrp then
-				elseif hrp then
+				wait()
+				if not ch:FindFirstChild("HumanoidRootPart") then
+				elseif ch:FindFirstChild("HumanoidRootPart") then
 					ch["Character Tilting"].Enabled = false
 					if AutoFarmFrame  then
 						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -2976,10 +2971,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 						elseif po >= 500 then
 							if here == nil then	
 							elseif here then
-								xframer(here.HumanoidRootPart.CFrame , 500)
+								xframer(here.HumanoidRootPart.CFrame , 600)
 							end
 						end
-						wait()
 					end
 				end
 			end
@@ -2989,12 +2983,11 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 			ch = char2
-print("ac")
 			wait(2)
 			spawn(function()
 				while _G.SaTAble.AutoMob do
 					wait()
-					if  not ch:FindFirstChild("HumanoidRootPart") then
+					if not ch:FindFirstChild("HumanoidRootPart") then
 					elseif ch:FindFirstChild("HumanoidRootPart") then
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
@@ -3017,14 +3010,15 @@ print("ac")
 							elseif po >= 500 then
 								if here == nil then	
 								elseif here then
-									xframer(here.HumanoidRootPart.CFrame , 500)
+									xframer(here.HumanoidRootPart.CFrame , 600)
 								end
 							end
 						end
 					end
 				end
 			end)
-			wait(5)
+
+			wait(3)
 			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
 			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		end)
