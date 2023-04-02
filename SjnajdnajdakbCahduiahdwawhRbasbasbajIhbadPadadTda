@@ -1598,6 +1598,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			------------------toutEstDedans..................---------------
 			spawn(function()
 				while _G.SaTAble.AutoMob do
+					wait()
 					if not ch:FindFirstChild("HumanoidRootPart") then
 						print("notHrp")
 					elseif ch:FindFirstChild("HumanoidRootPart") then
@@ -1627,7 +1628,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 									xframer(here.HumanoidRootPart.CFrame , 500)
 								end
 							end
-							wait()
 						end
 					end
 				end
@@ -1641,6 +1641,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				wait(2)
 				spawn(function()
 					while _G.SaTAble.AutoMob do
+						wait()
 						if not ch:FindFirstChild("HumanoidRootPart") then
 							print("notHrp")
 						elseif ch:FindFirstChild("HumanoidRootPart") then
@@ -1670,7 +1671,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 										xframer(here.HumanoidRootPart.CFrame , 500)
 									end
 								end
-								wait()
 							end
 						end
 					end
