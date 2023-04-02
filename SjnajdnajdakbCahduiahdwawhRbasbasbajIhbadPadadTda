@@ -2948,8 +2948,10 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 		------------------toutEstDedans..................---------------
 		spawn(function()
 			while _G.SaTAble.AutoMob do
-				if hrp == nil or not hrp then
+				if  not hrp then
+					print(0)
 				elseif hrp then
+					print(1)
 					ch["Character Tilting"].Enabled = false
 					if AutoFarmFrame  then
 						local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
