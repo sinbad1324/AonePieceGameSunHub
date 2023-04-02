@@ -1592,6 +1592,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			game.Workspace.Gravity = 0
 			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+			ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
 			local po 
 			local here
 			------------------toutEstDedans..................---------------
@@ -1599,6 +1600,8 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				while _G.SaTAble.AutoMob do
 					if hrp == nil or not hrp then
 					elseif hrp then
+						print("oui")
+
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1638,8 +1641,9 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				spawn(function()
 					while _G.SaTAble.AutoMob do
 						wait()
-						if hrp == nil or not hrp then
+						if  not hrp then
 						elseif hrp then
+							print("oui")
 							ch["Character Tilting"].Enabled = false
 							if AutoFarmFrame  then
 								local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
@@ -1674,7 +1678,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			end)
 
 			------------------toutEstDedans..................---------------
-			ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
 			saveSetting()
 		else
 			wait(0.5)
@@ -2986,8 +2989,10 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 			spawn(function()
 				while _G.SaTAble.AutoMob do
 					wait()
-					if hrp == nil or not hrp then
+					if  not hrp then
+						print("rien")
 					elseif hrp then
+						print(1)
 						ch["Character Tilting"].Enabled = false
 						if AutoFarmFrame  then
 							local qui = game:GetService("CoreGui").SunHub.Menu.AutoFarmScroll.AutoFarm.A1.AutoFarm.statsname.Text
