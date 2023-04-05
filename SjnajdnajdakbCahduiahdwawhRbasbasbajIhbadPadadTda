@@ -1630,10 +1630,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 					end
 				end
 			end)
-			wait(4)
-			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
-			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
-			print(hrp.Rotation ,hrp.Orientation )
 			game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 				ch = char2
 				wait(1)
@@ -1670,9 +1666,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 						end
 					end
 				end)
-				wait(4)
-				hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
-				hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 			end)
 
 			------------------toutEstDedans..................---------------
@@ -2958,9 +2951,7 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				end
 			end
 		end)
-		wait(4)
-		hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
-		hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y) 
+
 		game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function(char2)
 			ch = char2
 			wait(2)
@@ -2998,9 +2989,6 @@ if game.PlaceId == 8396586868 or game.PlaceId == 9432106399 then
 				end
 			end)
 
-			wait(4)
-			hrp.Orientation = Vector3.new( 90 , hrp.Orientation.Z   , hrp.Orientation.Y) 
-			hrp.Rotation = Vector3.new(  90 , hrp.Rotation.Z   , hrp.Rotation.Y)
 		end)
 		------------------toutEstDedans..................---------------
 		ActiveClcik(A1:FindFirstChild("ButtonsAutoFarm"):FindFirstChild("activordesc") ,A1:FindFirstChild("ButtonsAutoFarm") )
